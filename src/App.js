@@ -363,3 +363,34 @@ export default App;
 //     </div>
 //   );
 // }
+
+// export default App;
+
+// function MojaKomponenta() {
+//   const [divovi, setDivovi] = useState([1, 2, 3, 4, 5]);
+//   return (
+//     <div className="container ">
+//       <div className="row">
+//         {divovi.map(() => (
+//           <Card ime={"haris"} prezime={"gorcevic"} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default MojaKomponenta;
+
+// function App() {
+//   const [number, setNumber] = useState(0);
+//   return (
+//     <div>
+//       {number}
+//       <button onClick={() => setNumber(number + 1)}>+</button>
+//     </div>
+//   );
+// }
+// export default App;
+
+//==========================================================
+
