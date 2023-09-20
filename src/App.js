@@ -394,3 +394,85 @@ export default App;
 
 //==========================================================
 
+// //==========================================================
+// function App() {
+//   const [input, setInput] = useState("");
+//   const [buton, setButon] = useState(false);
+//   function buttonClicked() {
+//     setButon(true);
+//   }
+//   function inputText(event) {
+//     setInput(event.target.value);
+//   }
+//   return (
+//     <div className="container">
+//       <div className="card">
+//         <input
+//           style={{
+//             border: buton && input.length <= 4 ? "2px solid red" : "",
+//           }}
+//           onChange={inputText}
+//           placeholder="text"
+//           type="text"
+//         ></input>
+//         <button onClick={buttonClicked} className="buton">
+//           click
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
+
+//================================================================
+
+// function App() {
+//   const [numbers, setNumbers] = useState([1, 2, 3]);
+//   return (
+//     <div className="container">
+//       {numbers.map((el) => (
+//         <Card />
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default App;
+//====================================================================
+// function App() {
+//   const [input, setInput] = useState("");
+//   const [cardContent, setCardContent] = useState(""); // Sadržaj div elementa
+
+//   const handleButtonClick = () => {
+//     setCardContent(<div className="mm">Novi div</div>);
+//   };
+//   return (
+//     <div className="container">
+//       <div className="Card">
+//         <input type="text" placeholder="text"></input>
+//         <button onClick={handleButtonClick}>click</button>
+//         {cardContent}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+//======================================================
+
+// function App() {
+//   const [input, setInput] = useState("");
+//   return (
+//     <div className="container">
+//       <input
+//         type="text"
+//         placeholder="text"
+//         onChange={(e) => setInput(e.target.value)}
+//       ></input>
+//       <button onClick={() => alert(`cao ${input}`)}>click</button>
+//     </div>
+//   );
+// }
+// export default App;
+
+
