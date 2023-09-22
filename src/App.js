@@ -474,5 +474,52 @@ export default App;
 //   );
 // }
 // export default App;
+//==================================================================
+// function App() {
+//   const [brojevi, setBrojevi] = useState([1, 2, 3, 4, 5, 6, 7]);
+//   const [noviBroj, setNoviBroj] = useState(0);
+//   const [ime, setIme] = useState({
+//     ime: "haris",
+//     prezime: "gorcevic",
+//   });
+//   console.log(brojevi);
+//   return (
+//     <div className="container">
+//       <input onChange={(e) => setNoviBroj(e.target.value)} type="text"></input>
+//       <button onClick={(e) => setBrojevi([... brojevi, +noviBroj])}>
+//         click
+//       </button>
+//     </div>
+//   );
+// }
 
+// // export default App;
+// //====================================================
+// function App() {
+//   const [brojevi, setBrojevi] = useState([1, 2, 3, 4, 5, 6, 7]);
+//   const [noviBroj, setNoviBroj] = useState(0);
+//   const [name, setIme] = useState({
+//     ime: "haris",
+//     prezime: "gorcevic",
+//     godine: 18,
+//   });
+//   return (
+//     <div className="container">
+//       <input
+//         type="text"
+//         onChange={(e) => setIme({ ...name, ime: e.target.value })}
+//       ></input>
+//       <input
+//         type="text"
+//         onChange={(e) => setIme({ ...name, prezime: e.target.value })}
+//       ></input>
+//       <input
+//         type="text"
+//         onChange={(e) => setIme({ ...name, godine: e.target.value })}
+//       ></input>
+//       <button onClick={() => setIme(name) + console.log(namenp)}>click</button>
+//     </div>
+//   );
+// }
 
+// export default App;
