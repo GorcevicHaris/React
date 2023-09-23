@@ -523,3 +523,75 @@ export default App;
 // }
 
 // export default App;
+//==================================================
+
+// function Forma() {
+//   const [users, setUsers] = useState([]);
+//   const [user, setUser] = useState({
+//     imePrezime: "",
+//     zanimanje: "",
+//     godine: 0,
+//   });
+
+//   function clicked(ev) {
+//     console.log(ev.target.name);
+//   }
+//   const handleInputSecond = (event) => {
+//     setUser({
+//       ...user,
+//       [event.target.name]: event.target.value,
+//     });
+//   };
+
+//   return (
+//     <div className="main">
+//       <input
+//         onClick={clicked}
+//         className="input"
+//         placeholder="Ime i prezime"
+//         name="imePrezime"
+//         onChange={handleInputSecond}
+//       />
+//       <input
+//         onClick={clicked}
+//         className="input"
+//         placeholder="Godine"
+//         name="godine"
+//         onChange={handleInputSecond}
+//       />
+//       <input
+//         className="input"
+//         placeholder="Zanimanje"
+//         name="zanimanje"
+//         onChange={handleInputSecond}
+//       />
+//       <button
+//         className="dugme"
+//         onClick={() => {
+//           setUsers((prev) => [...prev, user]);
+//           setUser({ imePrezime: "", godine: 0, zanimanje: "" });
+//         }}
+//       >
+//         Dodaj korisnika
+//       </button>
+
+//       {users.map((user) => {
+//         return (
+//           <div
+//             style={{
+//               textAlign: "center",
+//               color: "white",
+//               backgroundColor: "blue",
+//             }}
+//           >
+//             <p>{user.imePrezime}</p>
+//             <p>{user.godine}</p>
+//             <p>{user.zanimanje}</p>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// }
+
+// export default Forma;
