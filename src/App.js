@@ -595,3 +595,79 @@ export default App;
 // }
 
 // export default Forma;
+
+// function App() {
+//   const [users, setUsers] = useState([]);
+//   const [user, setUser] = useState({
+//     ime: "",
+//     prezime: "",
+//     godine: 0,
+//   });
+//   const handleInputSecond = (event) => {
+//     setUser({
+//       ...user,
+//       [event.target.name]: event.target.value,
+//     });
+//   };
+//   console.log(user);
+//   return (
+//     <div className="main">
+//       <input
+//         name="ime"
+//         onChange={handleInputSecond}
+//         placeholder="name"
+//         type="text"
+//       ></input>
+//       <input
+//         onChange={handleInputSecond}
+//         name="prezime"
+//         placeholder="username"
+//         type="text"
+//       ></input>
+//       <input
+//         onChange={handleInputSecond}
+//         name="godine"
+//         placeholder="age"
+//         type="text"
+//       ></input>
+//       <button
+//         onClick={(e) => {
+//           setUsers([...users, user]);
+//           console.log(user);
+//         }}
+//       >
+//         Create Contact
+//       </button>
+//       {users.map((user) => {
+//         return (
+//           <div style={{ width: "200px", height: "200px", background: "blue" }}>
+//             <p>{user.ime}</p>
+//             <p>{user.prezime}</p>
+//             <p>{user.godine}</p>
+//           </div>
+//         );
+//       })}
+//     </div>
+//   );
+// }
+
+// export default App;
+
+//========================================================================
+
+// function App() {
+//   const [niz, setNiz] = useState([]);
+//   const [obj, setObj] = useState({
+//     ime: "haris",
+//     prezime: "gorcevic",
+//   });
+//   console.log(niz);
+//   return (
+//     <div className="main">
+//       <button onClick={() => setNiz([...niz, obj])}>click</button>
+//     </div>
+//   );
+// }
+
+// export default App;
+//=======================================================================
