@@ -671,3 +671,90 @@ export default App;
 
 // export default App;
 //=======================================================================
+//=======================================================================
+//      [event.target.name]: event.target.value, je dinamicki da bi u onchanfe mooglo da se menja i da
+//se svim inputima moze pristupiti preko name
+function App() {
+  const [obj, setObj] = useState({
+    imeprezime: "",
+    godine: 0,
+    mestorodjenja: "",
+    stepenskolovanja: "",
+    zanimanje: "",
+    hobi: "",
+    partnerstatus: "",
+  });
+  const [array, setArray] = useState([]);
+  const handler = (event) => {
+    setObj({
+      ...obj,
+      [event.target.name]: event.target.value,
+    });
+  };
+  const secondhandler = () => {
+    const niz = [];
+
+    const keys = Object.keys(obj);
+    // console.log(obj, keys);
+    keys.forEach((fieldName) => {
+      if (obj[fieldName].length == 0) {
+        niz.push(fieldName);
+      }
+    });
+    console.log(niz);
+
+    if (niz.length > 0) {
+      alert(`popunite polja : ${niz}`);
+    } else {
+      setArray([...array, obj]);
+    }
+  };
+
+  return (
+    <div className="container">
+      <div className="main">
+        <p>Ime i Prezime</p>
+        <input onChange={handler} name="imeprezime"></input>
+        <p>Godine</p>
+
+        <input onChange={handler} name="godine" type="text"></input>
+        <p>Mesto rodjenja</p>
+        <input name="mestorodjenja" onChange={handler}></input>
+        <p>Stepen skolovanja</p>
+        <select onChange={handler} name="stepenskolovanja">
+          <option>Osnovna Škola</option>
+          <option>Srednja Škola</option>
+          <option>Fakultet</option>
+        </select>
+        <p>Zanimanje</p>
+
+        <input onChange={handler} name="zanimanje"></input>
+        <p>Hobi</p>
+
+        <input onChange={handler} name="hobi"></input>
+        <p>Partner Status</p>
+        <select onChange={handler} name="partnerstatus">
+          <option selected disabled></option>
+          <option>Da</option>
+          <option>Ne</option>
+        </select>
+        <button onClick={secondhandler}>Create Contact</button>
+      </div>
+      {array.map((e) => {
+        return (
+          <Card
+            imeprezime={e.imeprezime}
+            godine={e.godine}
+            mestorodjenja={e.mestorodjenja}
+            stepenskolovanja={e.stepenskolovanja}
+            zanimanje={e.zanimanje}
+            hobi={e.hobi}
+            partnerstatus={e.partnerstatus}
+          />
+        );
+      })}
+    </div>
+  );
+}
+export default App;
+
