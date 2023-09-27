@@ -758,3 +758,108 @@ function App() {
 }
 export default App;
 
+//======================================================
+// function App() {
+//   const [obj, setObj] = useState({
+//     ime: "",
+//     prezime: "",
+//     godine: "",
+//   });
+//   const [array, setArray] = useState([]);
+//   const handler = (event) => {
+//     setObj({
+//       ...obj,
+//       [event.target.name]: event.target.value,
+//     });
+//   };
+//   const butonHandler = () => {
+//     let newArray = [];
+//     const keys = Object.keys(obj);
+//     keys.forEach((element) => {
+//       if (obj[element].length == 0) {
+//         newArray.push(element);
+//       }
+//       console.log(newArray);
+//     });
+//     if (newArray.length > 0) {
+//       alert(`popunite polje: ${newArray}`);
+//     } else {
+//       setArray([...array, obj]);
+//     }
+//   };
+
+//   console.log(obj);
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <p>Ime</p>
+//         <input onChange={handler} name="ime" type="text"></input>
+//         <p>Prezime</p>
+//         <input onChange={handler} name="prezime" type="text"></input>
+//         <p>godine</p>
+//         <input onChange={handler} name="godine" type="text"></input>
+//         <button onClick={butonHandler}>Submit</button>
+//       </div>
+//       {array.map((el) => {
+//         return (
+//           <Card imeprezime={el.ime} prezime={el.prezime} godine={el.godine} />
+//         );
+//       })}
+//     </div>
+//   );
+// }
+
+// export default App;
+//========================================================
+
+// function App() {
+//   const [data, setData] = useState(null);
+
+//   const fetchData = () => {
+//     const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+//     fetch(apiUrl)
+//       .then((response) => response.json())
+//       .then((data) => {
+//         setData(data);
+//         console.log(data);
+//       });
+//   };
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <button onClick={fetchData}>Submit</button>
+//         <div>
+//           {data && (
+//             <ul>
+//               {data.map((item) => (
+//                 <li>{item.title}</li>
+//               ))}
+//             </ul>
+//           )}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
+//==============================================================================
+function App() {
+  const [obj, setObj] = useState([
+    { name: "clips", isBought: true },
+    { name: "clips", isBought: false },
+    { name: "clips", isBought: false },
+  ]);
+  return (
+    <div className="container">
+      <div className="main">
+        {obj.map((el) => {
+          return <Card name={el.name} isBought={el.isBought} />;
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default App;
