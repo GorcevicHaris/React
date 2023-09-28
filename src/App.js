@@ -863,3 +863,51 @@ function App() {
 }
 
 export default App;
+//========================================================================
+
+// let array = [10, 20, 30, 40];
+// {
+//   array.map((el) => (el * 100) / 10);
+//   console.log(array);
+// }
+//=============================================================
+// function App() {
+//   const products = [
+//     {
+//       id: 1,
+//       name: "haris",
+//       age: 18,
+//     },
+//     {
+//       id: 2,
+//       name: "erhad",
+//       age: 19,
+//     },
+//     {
+//       id: 3,
+//       name: "imad",
+//       age: 20,
+//     },
+//     {
+//       id: 4,
+//       name: "amar",
+//       age: 16,
+//     },
+//   ];
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         {products.map((el) => {
+//           return (
+//             <h1 key={el.id}>
+//               {el.name} : {el.age}
+//             </h1>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
