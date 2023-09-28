@@ -933,3 +933,43 @@ export default App;
 // }
 // export default App;
 //=====================================================================
+//=====================================================================
+//TODOLIST REACT
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [array, setArray] = useState([]);
+  const [check, setCheck] = useState(false);
+  function handler(e) {
+    setInputText(e.target.value);
+  }
+  function secondhandler() {
+    setArray([...array, inputText]);
+    setInputText("");
+  }
+
+  console.log(array);
+  return (
+    <div className="container">
+      <div className="main">
+        <input value={inputText} onChange={handler}></input>
+        <button onClick={secondhandler}>Submit </button>
+        {array.map((el) => {
+          return (
+            <div
+              style={{ display: check == true ? "none" : "flex" }}
+              className="minicard"
+            >
+              {el}
+
+              <button onClick={() => setCheck(true)}>Remover</button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+
