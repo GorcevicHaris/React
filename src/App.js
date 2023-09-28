@@ -911,3 +911,25 @@ export default App;
 // }
 
 // export default App;
+//===================================================================
+// function App() {
+//   const [obj, setObj] = useState({
+//     ime: "",
+//     prezime: "",
+//   });
+//   const [buton, setButon] = useState(false);
+//   const handler = (event) => {
+//     setObj({ ...obj, [event.target.name]: event.target.value });
+//   };
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <input onChange={handler} name="ime"></input>
+//         <input onChange={handler} name="prezime"></input>
+//         <button onClick={() => true && console.log(obj)}></button>
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
+//=====================================================================
