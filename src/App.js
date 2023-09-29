@@ -972,4 +972,40 @@ function App() {
 
 export default App;
 
+//======================================================
+function App() {
+  const [inputText, setInputText] = useState("");
+  const [array, setArray] = useState([]);
+  function handler(e) {
+    setInputText(e.target.value);
+  }
+  function secondhandler() {
+    setArray([...array, inputText]);
+    setInputText("");
+  }
+  console.log(array);
+
+  return (
+    <div className="container">
+      <div className="main">
+        <input value={inputText} onChange={handler}></input>
+        <button onClick={secondhandler}>Submit</button>
+        {array.map((el) => {
+          return (
+            <div className="minicard">
+              {el}
+              <button onClick={() => setArray(array.filter((e) => e !== el))}>
+                Remover
+              </button>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export default App;
+
+//['bkbdkf'] = dodato iz inputa nakon toga filter vraca samo one koji su drugaciji od o istog
 
