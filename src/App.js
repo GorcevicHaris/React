@@ -1007,5 +1007,51 @@ function App() {
 
 export default App;
 
-//['bkbdkf'] = dodato iz inputa nakon toga filter vraca samo one koji su drugaciji od o istog
+//['bkbdkf'] = dodato iz inputa nakon toga filter vraca samo one koji su drugaciji od o isto
+// //==============================================
+// function App() {
+//   const [products, setProducts] = useState([
+//     { name: "Adidas", price: 120, inCart: false },
+//     { name: "Puma", price: 200, inCart: false },
+//     { name: "Nike", price: 300, inCart: false },
+//     { name: "Didadora", price: 70, inCart: false },
+//     { name: "Under Armour", price: 120, inCart: false },
+//   ]);
+
+//   const mapProduct = products.map((el) => el);
+//   const inCartProducts = products.filter((product) => product.inCart == true);
+
+//   console.log(inCartProducts.length);
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         {inCartProducts.length > 0 ? (
+//           inCartProducts.map((product) => (
+//             <Card ime={product.name} cena={product.price} />
+//           ))
+//         ) : (
+//           <h1>Nemate proizvoda u korpi</h1>
+//         )}
+//         <button
+//           onClick={() => {
+//             setProducts((el) =>
+//               el.map((e) =>
+//                 e.name === "Puma"
+//                   ? { ...e, inCart: !e.inCart }
+//                   : e && e.name === "Nike"
+//                   ? { ...e, inCart: !e.inCart }
+//                   : e
+//               )
+//             );
+//           }}
+//         >
+//           Dodaj u korpu
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
+//==================================================
 
