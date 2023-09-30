@@ -1054,4 +1054,39 @@ export default App;
 // }
 // export default App;
 //==================================================
+//==================================================
+// function App() {
+//   const [products, setProducts] = useState([
+//     { ime: "Adidas", cena: 120, uKorpi: false },
+//     { ime: "Puma", cena: 200, uKorpi: false },
+//     { ime: "Nike", cena: 300, uKorpi: false },
+//     { ime: "Didadora", cena: 70, uKorpi: false },
+//     { ime: "Under Armour", cena: 120, uKorpi: false },
+//   ]);
+//   const filteredArray = products.filter((el) => el.uKorpi);
+//   console.log(filteredArray);
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <button
+//           onClick={() => {
+//             setProducts(
+//               products.map((e) =>
+//                 e.ime == "Nike" ? { ...e, uKorpi: !e.uKorpi } : e
+//               )
+//             );
+//           }}
+//         >
+//           Submit
+//         </button>
+//         {filteredArray.length > 0 ? (
+//           filteredArray.map((el) => <Card ime={el.ime} cena={el.cena} />)
+//         ) : (
+//           <h1>Nemate nista trenutno na stanju</h1>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
 
