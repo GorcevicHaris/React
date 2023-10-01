@@ -1090,3 +1090,35 @@ export default App;
 // }
 // export default App;
 
+// function App() {
+//   const [inputText, setInputText] = useState("");
+//   const [array, setArray] = useState([]);
+//   function handler(e) {
+//     setInputText(e.target.value);
+//   }
+//   function arrays() {
+//     setArray([...array, inputText]);
+//     setInputText("");
+//   }
+//   console.log(array);
+//   // console.log(inputText);
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <input value={inputText} onChange={handler}></input>
+//         <button onClick={arrays}>Submit</button>
+//         {array.map((el) => {
+//           return (
+//             <div className="minicard">
+//               <button onClick={() => setArray(array.filter((e) => e !== el))}>
+//                 Remover
+//               </button>
+//               {el}
+//             </div>
+//           );
+//         })}
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
