@@ -1122,3 +1122,44 @@ export default App;
 //   );
 // }
 // export default App;
+// //=====================================================================
+// function App() {
+//   const [resourse, setResourse] = useState("users");
+//   const [falsing, setFalsing] = useState(true);
+//   const [array, setArray] = useState([]);
+
+//   useEffect(() => {
+//     fetch(`https://jsonplaceholder.typicode.com/${resourse}`)
+//       .then((response) => response.json())
+//       .then((json) => console.log(json));
+//   }, [resourse]); // Dodajte resourse kao zavisnost
+
+//   return (
+//     <div className="container">
+//       <button onClick={() => setResourse("photos")}>photo</button>
+//       {falsing ? (
+//         <div className="minidiv">
+//           <p>Title: {setResourse(resourse[0])}</p>
+//         </div>
+//       ) : (
+//         <p>nemoj nista prikazati</p>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default App;
+// //=======================================================================
+// function App() {
+//   let func = () => {
+//     fetch("https://jsonplaceholder.typicode.com/todos/1")
+//       .then((response) => response.json())
+//       .then((json) => console.log(json));
+//   };
+//   return (
+//     <div className="container">
+//       <div className="main"></div>
+//     </div>
+//   );
+// }
+// export default App;
