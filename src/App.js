@@ -1193,3 +1193,20 @@ export default App;
 //   );
 // }
 // export default App;
+/ // =============================================================
+function App() {
+  const [defaultdata, setDeafultData] = useState([]);
+  const getData = () => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((json) => setDeafultData(json.products.map()));
+    console.log(defaultdata);
+  };
+  return (
+    <div className="container">
+      <button onClick={getData}>uzmi podatke</button>
+    </div>
+  );
+}
+export default App;
+
