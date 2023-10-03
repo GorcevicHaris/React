@@ -1210,3 +1210,50 @@ function App() {
 }
 export default App;
 
+// // =============================================================
+function App() {
+  const [defaultdata, setDeafultData] = useState([]);
+  const [array, setArray] = useState([]);
+  const [check, setCheck] = useState(false);
+
+  const getData = () => {
+    fetch("https://dummyjson.com/products")
+      .then((res) => res.json())
+      .then((json) => setDeafultData(json.products));
+  };
+
+  return (
+    <div className="container">
+      <button onClick={getData}>uzmi podatke</button>
+      <button
+        onClick={() =>
+          setDeafultData(defaultdata.filter((el) => el.id % 2 === 0))
+        }
+      >
+        Filtered ids
+      </button>
+      <div className="secondmain">
+        {defaultdata.length > 0 ? (
+          defaultdata.splice(0, 4).map((el) => (
+            <div className="main">
+              <Card
+                brand={el.brand}
+                category={el.category}
+                description={el.description}
+                id={el.id}
+                price={el.price}
+                rating={el.rating}
+                stock={el.stock}
+              />
+            </div>
+          ))
+        ) : (
+          <h1>trenuntno nema podatka</h1>
+        )}
+        {/* // {defaultdata?.length === 0 && <h1>nema trenutnih podataka</h1>} */}
+      </div>
+    </div>
+  );
+}
+
+export default App;
