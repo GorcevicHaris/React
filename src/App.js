@@ -1214,27 +1214,44 @@ export default App;
 function App() {
   const [defaultdata, setDeafultData] = useState([]);
   const [array, setArray] = useState([]);
+  const [filtered, setFiltered] = useState([]);
   const [check, setCheck] = useState(false);
 
   const getData = () => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((json) => setDeafultData(json.products));
+      .then((json) => {
+        setDeafultData(json.products);
+        setFiltered(json.products);
+        const helper = json.products.map((el) => el.category);
+        const bezDuplikata = [...new Set(helper)];
+        setArray(bezDuplikata);
+        console.log(bezDuplikata);
+      });
   };
+  useEffect(() => {
+    getData();
+  }, []);
+  console.log("nesro");
+
+  console.log(array);
+  console.log(defaultdata);
 
   return (
     <div className="container">
-      <button onClick={getData}>uzmi podatke</button>
-      <button
-        onClick={() =>
-          setDeafultData(defaultdata.filter((el) => el.id % 2 === 0))
-        }
-      >
-        Filtered ids
-      </button>
+      {array.map((el) => (
+        <button
+          onClick={() =>
+            setFiltered(defaultdata.filter((e) => e.category == el))
+          }
+        >
+          {el}
+        </button>
+      ))}
       <div className="secondmain">
-        {defaultdata.length > 0 ? (
-          defaultdata.splice(0, 4).map((el) => (
+        <h1>asdasoi</h1>
+        {array.length > 0 ? (
+          filtered.map((el) => (
             <div className="main">
               <Card
                 brand={el.brand}
@@ -1250,7 +1267,6 @@ function App() {
         ) : (
           <h1>trenuntno nema podatka</h1>
         )}
-        {/* // {defaultdata?.length === 0 && <h1>nema trenutnih podataka</h1>} */}
       </div>
     </div>
   );
