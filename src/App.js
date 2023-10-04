@@ -1211,68 +1211,69 @@ function App() {
 export default App;
 
 // // =============================================================
-function App() {
-  const [defaultdata, setDeafultData] = useState([]);
-  const [array, setArray] = useState([]);
-  const [filtered, setFiltered] = useState([]);
-  const [check, setCheck] = useState(false);
+// import ReactStars from "react-stars";
+// function App() {
+//   const [defaultdata, setDeafultData] = useState([]);
+//   const [array, setArray] = useState([]);
+//   const [filtered, setFiltered] = useState([]);
 
-  const getData = () => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        setDeafultData(json.products);
-        setFiltered(json.products);
-        const helper = json.products.map((el) => el.category);
-        const bezDuplikata = [...new Set(helper)];
-        setArray(bezDuplikata);
-        console.log(bezDuplikata);
-      });
-  };
-  useEffect(() => {
-    getData();
-  }, []);
-  console.log("nesro");
+//   const getData = () => {
+//     fetch("https://dummyjson.com/products")
+//       .then((res) => res.json())
+//       .then((json) => {
+//         setDeafultData(json.products);
+//         setFiltered(json.products);
+//         const categories = json.products.map((el) => el.category);
+//         const bezDuplikata = [...new Set(categories)];
+//         setArray(bezDuplikata);
+//       });
+//   };
+//   useEffect(() => {
+//     getData();
+//   }, []);
 
-  console.log(array);
-  console.log(defaultdata);
+//   console.log(defaultdata);
 
-  return (
-    <div className="container">
-      {array.map((el) => (
-        <button
-          onClick={() =>
-            setFiltered(defaultdata.filter((e) => e.category == el))
-          }
-        >
-          {el}
-        </button>
-      ))}
-      <div className="secondmain">
-        <h1>asdasoi</h1>
-        {array.length > 0 ? (
-          filtered.map((el) => (
-            <div className="main">
-              <Card
-                brand={el.brand}
-                category={el.category}
-                description={el.description}
-                id={el.id}
-                price={el.price}
-                rating={el.rating}
-                stock={el.stock}
-              />
-            </div>
-          ))
-        ) : (
-          <h1>trenuntno nema podatka</h1>
-        )}
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="container">
+//       <div className="divForButtons">
+//         {array.map((el) => (
+//           <button
+//             onClick={() =>
+//               setFiltered(defaultdata.filter((e) => e.category == el))
+//             }
+//           >
+//             {el}
+//           </button>
+//         ))}
+//       </div>
+//       <div className="secondmain">
+//         {array.length > 0 ? (
+//           filtered.map((el) => (
+//             <div className="main">
+//               <Card
+//                 images={el.images[0]}
+//                 brand={el.brand}
+//                 category={el.category}
+//                 description={el.description}
+//                 id={el.id}
+//                 price={el.price}
+//                 stock={el.stock}
+//               />
+//               <div className="stars">
+//                 <ReactStars count={5} size={24} value={el.rating} />
+//               </div>
+//             </div>
+//           ))
+//         ) : (
+//           <h1>trenuntno nema podatka</h1>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
 //=======================================================
 function App() {
   const [data, setData] = useState({});
