@@ -1358,3 +1358,46 @@ export default App;
 
 // export default App;
 //  ======================================================================
+
+
+
+// function App() {
+//   const [data, setData] = useState([]);
+//   const [filteredArray, setFilteredArray] = useState([]);
+//   const [newData, setNewData] = useState([]);
+
+//   useEffect(() => {
+//     fetch("https://dummyjson.com/products")
+//       .then((res) => res.json())
+//       .then((json) => {
+//         setData(json.products);
+//         const categories = json.products.map((el) => el.category);
+//         setFilteredArray([...new Set(categories)]);
+//         setNewData(json.products);
+//       });
+//   }, []);
+//   console.log(filteredArray);
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         {filteredArray.map((el) => (
+//           <button
+//             onClick={() => setData(newData.filter((e) => e.category == el))}
+//           >
+//             {el}
+//           </button>
+//         ))}
+//       </div>
+//       {data.map((el) => (
+//         <Card
+//           brand={el.brand}
+//           description={el.description}
+//           images={el.images[0]}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+// export default App;
+
