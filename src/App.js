@@ -1303,4 +1303,58 @@ function App() {
   );
 }
 export default App;
+//====================================================================
+// function App() {
+//   const [api, setApi] = useState({});
+//   const [number, setNumber] = useState(2);
+//   const [allButtons, setAllButton] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+//   console.log(api);
+//   console.log(api);
+//   useEffect(() => {
+//     fetch(`https://dummyjson.com/products/${number}`)
+//       .then((res) => res.json())
+//       .then((json) => setApi(json));
+//   }, [number]);
+//   return (
+//     <div className="container">
+//       {
+//         <div>
+//           <h1>title :{api.title}</h1>
+//           <h1> description: {api.description}</h1>
+//           {api.images ? <img src={api.images[0]}></img> : null}
+//           {allButtons.map((el) => (
+//             <button onClick={() => setNumber(el + 1)}>{el}</button>
+//           ))}
+//         </div>
+//       }
+//     </div>
+//   );
+// }
+// export default App;
+//=======================================================================
+// function App() {
+//   const [api, setApi] = useState([]);
+//   const [allButtons, setAllButtons] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+//   const [changer, setChanger] = useState(1);
+//   console.log(api);
+//   useEffect(() => {
+//     fetch(`https://dummyjson.com/products/${changer}`)
+//       .then((res) => res.json())
+//       .then((json) => setApi(json));
+//   }, [changer]);
+//   return (
+//     <div className="container">
+//       <div>
+//         <h1>title:{api.title}</h1>
+//         <h1> description:{api.description}</h1>
+//         {api.images && <img src={api.images[0]}></img>}
+//         {allButtons.map((el) => (
+//           <button onClick={() => setChanger(el + 1)}>{el}</button>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
 
+// export default App;
+//  ======================================================================
