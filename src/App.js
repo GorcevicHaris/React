@@ -1400,4 +1400,28 @@ export default App;
 //   );
 // }
 // export default App;
+//===============================================================
+function App() {
+  const [inputText, setInputText] = useState({
+    ime: "",
+    prezime: "",
+    age: 0,
+  });
+  function handler(event) {
+    setInputText({ ...inputText, [event.target.name]: event.target.value });
+  }
+  return (
+    <div className="container">
+      <input onChange={handler} name="ime"></input>
+      <input onChange={handler} name="prezime"></input>
+      <input onChange={handler} name="age"></input>
+      <button
+        onClick={() => inputText == true && console.log(inputText)}
+      ></button>
+    </div>
+  );
+}
+export default App;
+// //========================================================================
+
 
