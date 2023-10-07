@@ -1424,6 +1424,9 @@ import Buton from "./importing/buton";
 function App() {
   const [inputText, setInputText] = useState([]);
   function handler() {}
+  function handler() {
+    setInterval(() => {});
+  }
 }
 
 export default App;
