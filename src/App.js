@@ -1423,6 +1423,7 @@ import Buton from "./importing/buton";
 // // //==========================================================================
 function App() {
   const [inputText, setInputText] = useState([]);
+  function handler() {}
 }
 
 export default App;
