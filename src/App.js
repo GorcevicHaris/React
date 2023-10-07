@@ -19,7 +19,7 @@ import Buton from "./importing/buton";
 //           description="odlicne"
 //           price="120€"
 //         />
-//         <Card
+//         <Card 
 //           backgroundImage={Slika2}
 //           name="addidas"
 //           description="original"
