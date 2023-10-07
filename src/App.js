@@ -1415,7 +1415,7 @@ export default App;
 //       <input onChange={handler} name="age"></input>
 //       <button
 //         onClick={() => inputText == true && console.log(inputText)}
-//       ></button>
+//       ></button>gi
 //     </div>
 //   );
 // }
