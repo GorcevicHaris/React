@@ -1388,6 +1388,7 @@ import Buton from "./importing/buton";
 // //         ))}
 // //       </div>
 // //       {data.map((el) => (
+////asd
 // //         <Card
 // //           brand={el.brand}
 // //           description={el.description}
