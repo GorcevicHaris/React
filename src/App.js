@@ -1462,36 +1462,44 @@ import Buton from "./importing/buton";
 
 // export default App;
 // `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
-
-// function App() {
-//   const [text, setText] = useState([]);
-//   const [data, setData] = useState(false);
-//   const [secondData, setSecondData] = useState([]);
-//   function getData() {
-//     fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
-//       .then((res) => res.json())
-//       .then((el) => {
-//         setData(el[0].name);
-//         setSecondData(el[0].flags);
-//         console.log(el[0].name);
-//       });
-//   }
-//   function handler(e) {
-//     setText(e.target.value);
-//   }
-//   return (
-//     <div className="container">
-//       <div className="main">
-//         <input value={text} onChange={handler}></input>
-//         <button onClick={getData}></button>
-//         {data ? (
-//           <Card category={data.common} images={secondData.svg} />
-//         ) : (
-//           <h1>nema podataka</h1>
-//         )}
-//       </div>
-//     </div>
-//     // data [0]. flags. svg;
-//   );
-// }
-// export default App;
+function App() {
+  const [text, setText] = useState([]);
+  const [data, setData] = useState(false);
+  const [secondData, setSecondData] = useState([]);
+  function getData() {
+    fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
+      .then((res) => res.json())
+      .then((el) => {
+        setData(el[0]);
+        setSecondData(el[0].flags.svg);
+        console.log(el[0].flag);
+        console.log(el[0].flag);
+        console.log(el);
+      });
+  }
+  function handler(e) {
+    setText(e.target.value);
+  }
+  return (
+    <div className="container">
+      <div className="main">
+        <div className="secondmini">
+          <input placeholder="country" value={text} onChange={handler}></input>
+          <button onClick={getData}>Search</button>
+        </div>
+        {data ? (
+          <Card
+            category={data.name.common}
+            images={secondData}
+            capital={data.capital}
+          />
+        ) : (
+          <h1>nema podataka</h1>
+        )}
+      </div>
+    </div>
+    // data [0]. flags. svg;
+  );
+}
+export default App;
+//===================================
