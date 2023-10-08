@@ -223,7 +223,7 @@ button{
   width: 490px;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: red;
   border-radius: 3px;
   align-items: center;
   justify-content: center; 
@@ -334,7 +334,7 @@ p {
   top: 0;
   background-color: white;
   }
-.minidiv{
+.mini{
   background-color: yellow;
   width: 250px;
   height: 250px;

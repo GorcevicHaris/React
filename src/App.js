@@ -1421,14 +1421,43 @@ import Buton from "./importing/buton";
 //   );
 // }
 // export default App;
-// // //==========================================================================
-function App() {
-  const [inputText, setInputText] = useState([]);
-  function handler() {}
-  function handler() {
-    console.log(inputText);
-    setInterval(() => {});
-  }
-}
+// // ============================================================================
+// function App() {
+//   const [text, setText] = useState([]);
+//   const [data, setData] = useState({});
+//   const [filteredArray, setFilteredArray] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
+//   function getData() {
+//     console.log(text);
+//     fetch(`https://dummyjson.com/products/search?q=${text}`)
+//       .then((res) => res.json())
+//       .then((json) => {
+//         const categories = json.products.map((el) => el.category);
+//         console.log("categroy", categories);
+//         setData([...new Set(categories)]);
+//         // console.log(noDuplicates);
+//         // setFilteredArray(noDuplicates[0]);
+//         // console.log(filteredArray);
+//       });
+//   }
+//   console.log(data);
+//   // useEffect(() => {
+//   //   getData();
+//   // }, []);
 
-export default App;
+//   function handler(e) {
+//     setText(e.target.value);
+//   }
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <input value={text} onChange={handler}></input>
+//         <button onClick={getData}></button>
+//         {data && <Card category={data[0]} />}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default App;
