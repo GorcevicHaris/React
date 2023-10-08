@@ -1425,6 +1425,7 @@ function App() {
   const [inputText, setInputText] = useState([]);
   function handler() {}
   function handler() {
+    console.log(inputText);
     setInterval(() => {});
   }
 }
