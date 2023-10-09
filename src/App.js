@@ -1603,33 +1603,83 @@ import Buton from "./importing/buton";
 // }
 // export default App;
 //===================================================================
+// function DrugiDomaci() {
+//   const [data, setData] = useState([]);
+//   const [search, setSearch] = useState("");
+
+//   const getData = () => {
+//     fetch(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((res) => res.json())
+//       .then((products) => setData(products.products));
+//   };
+
+//   useEffect(() => {
+//     getData();
+//   }, []);
+
+//   console.log(data, "DATTA");
+//   console.log(search, "SEARCH");
+
+//   return (
+//     <div className="container">
+//       <div className="searchWrapper">
+//         <input
+//           placeholder="Search..."
+//           className="searchInput"
+//           value={search}
+//           onChange={(e) => setSearch(e.target.value)}
+//         />
+//         <button onClick={getData}>Search</button>
+//       </div>
+
+//       <div className="cardWrapper">
+//         {data.map((product) => (
+//           <Card product={product} key={product.id} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default DrugiDomaci;
+//===============================================================
 function DrugiDomaci() {
   const [data, setData] = useState([]);
+  const [secondData, setSecondData] = useState([]);
+
   const [search, setSearch] = useState("");
 
   const getData = () => {
     fetch(`https://dummyjson.com/products/search?q=${search}`)
       .then((res) => res.json())
-      .then((products) => setData(products.products));
+      .then((products) => {
+        setData(products.products);
+      });
+  };
+  const getSecondData = () => {
+    fetch(`https://dummyjson.com/products/search?q=${search}`)
+      .then((res) => res.json())
+      .then((products) => {
+        setSecondData(products.products);
+      });
   };
 
   useEffect(() => {
     getData();
   }, [search]);
-
-  console.log(data, "DATTA");
-  console.log(search, "SEARCH");
-
+  //// ovo gore je dinamicko izvrsava se na svaku promenu
+  useEffect(() => {
+    getSecondData();
+  }, []);
+  // ovo gore je inicijalno izvrasava se samo jednom
   return (
     <div className="container">
       <div className="searchWrapper">
-        <input
-          placeholder="Search..."
-          className="searchInput"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        {/* <button onClick={getData}>Search</button> */}
+        <select onChange={(e) => setSearch(e.target.value)}>
+          {secondData.map((el) => (
+            <option>{el.title}</option>
+          ))}
+        </select>
       </div>
 
       <div className="cardWrapper">
