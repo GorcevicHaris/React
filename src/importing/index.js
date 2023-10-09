@@ -62,7 +62,7 @@ function Card({
       <h1>Brand: {brand}</h1>
       <h1>Capital: {capital}</h1>
       <h1>Region {region}</h1>
-      {/* <h1>Description: {description}</h1> */}
+      <h1>Description: {description}</h1>
     </div>
   );
 }

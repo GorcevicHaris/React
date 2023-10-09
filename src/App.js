@@ -1465,7 +1465,6 @@ import Buton from "./importing/buton";
 // function App() {
 //   const [text, setText] = useState([]);
 //   const [data, setData] = useState(false);
-//   const [secondData, setSecondData] = useState([]);
 //   function getData() {
 //     fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
 //       .then((res) => res.json())
@@ -1481,10 +1480,10 @@ import Buton from "./importing/buton";
 //   function handler(e) {
 //     setText(e.target.value);
 //   }
-//   useEffect(() => {
-//     console.log("ADSDSA");
-//   }, [data]);
-//   console.log("data=", data);
+//   //   useEffect(() => {
+//   //     console.log("ADSDSA");
+//   //   }, [data]);
+//   //   console.log("data=", data);
 
 //   return (
 //     <div className="container">
@@ -1493,7 +1492,13 @@ import Buton from "./importing/buton";
 //           <input placeholder="country" value={text} onChange={handler}></input>
 //           <button onClick={getData}>Search</button>
 //         </div>
-//         {data && <Card capital={data[0].capital} images={data[0].flags.svg} />}
+//         {data && (
+//           <Card
+//             capital={data[0].capital}
+//             region={data[0].region}
+//             images={data[0].flags.svg}
+//           />
+//         )}
 //       </div>
 //     </div>
 //     // data [0]. flags. svg;
@@ -1565,34 +1570,38 @@ import Buton from "./importing/buton";
 // export default App;
 //==========================================================
 
-// function App() {
-//   const [text, setText] = useState([]);
-//   const [data, setData] = useState([]);
-//   function getData() {
-//     fetch(`https://dummyjson.com/products?limit=10&skip=10&select=${text}`)
-//       .then((res) => res.json())
-//       .then((el) => {
-//         setData(el.products[0].title);
-//       });
-//   }
-//   function handler(e) {
-//     setText(e.target.value);
-//   }
+function App() {
+  const [text, setText] = useState([]);
+  const [data, setData] = useState([]);
+  const [secondData, setSecondData] = useState([]);
+  function getData() {
+    fetch(`https://dummyjson.com/products?limit=10&skip=10&select=${text}`)
+      .then((res) => res.json())
+      .then((el) => {
+        setData(el.products[0]);
+        setSecondData(el.products[0].images[0]);
+      });
+  }
+  function handler(e) {
+    setText(e.target.value);
+  }
 
-//   console.log(data);
-//   //   useEffect(() => {
-//   //     getData();
-//   //   }, []);
-//   return (
-//     <div className="container">
-//       <button onClick={getData}>Fetch</button>
-//       <input onChange={handler} value={text}></input>
-//       {/* {data &&
-//         data.map((el) => {
-//           <Card title={el.title} />;
-//         })} */}
-//       {data && <Card title={data} />}
-//     </div>
-//   );
-// }
-// export default App;
+  console.log(data);
+  //   useEffect(() => {
+  //     getData();
+  //   }, []);
+  return (
+    <div className="container">
+      <button onClick={getData}>Fetch</button>
+      <input onChange={handler} value={text}></input>
+      {/* {data &&
+        data.map((el) => {
+          <Card title={el.title} />;
+        })} */}
+      {data && (
+        <Card title={data.title} brand={data.brand} images={secondData} />
+      )}
+    </div>
+  );
+}
+export default App;
