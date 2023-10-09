@@ -1421,30 +1421,27 @@ import Buton from "./importing/buton";
 //   );
 // }
 // export default App;
-// // ============================================================================
+// // // ============================================================================
 // function App() {
 //   const [text, setText] = useState([]);
 //   const [data, setData] = useState([]);
 //   const [array, setArray] = useState([true]);
 //   function getData() {
 //     console.log(text);
-//     fetch(`https://dummyjson.com/products/search?q=phone`)
+//     fetch(`https://dummyjson.com/products/search?q=${text}`)
 //       .then((res) => res.json())
 //       .then((json) => {
 //         const categories = json.products.map((el) => el.category);
-//         console.log(json.products[2].category);
+//         // console.log(json.products[2].category);
 //         console.log(categories);
 //         console.log();
 //         setData(json.products);
 //         setArray(data);
 //       });
 //   }
-//   console.log(data);
-
 //   function handler(e) {
 //     setText(e.target.value);
 //   }
-
 //   return (
 //     <div className="container">
 //       <div className="main">
@@ -1452,7 +1449,7 @@ import Buton from "./importing/buton";
 //         <button onClick={getData}>Find</button>
 //         {data.map((el) => {
 //           {
-//             return <Card category={el.category} brand={el.brand} />;
+//             return <Card category={el.category} brand={el.brand} key={el.id} />;
 //           }
 //         })}
 //       </div>
@@ -1570,38 +1567,78 @@ import Buton from "./importing/buton";
 // export default App;
 //==========================================================
 
-function App() {
-  const [text, setText] = useState([]);
-  const [data, setData] = useState([]);
-  const [secondData, setSecondData] = useState([]);
-  function getData() {
-    fetch(`https://dummyjson.com/products?limit=10&skip=10&select=${text}`)
-      .then((res) => res.json())
-      .then((el) => {
-        setData(el.products[0]);
-        setSecondData(el.products[0].images[0]);
-      });
-  }
-  function handler(e) {
-    setText(e.target.value);
-  }
+// function App() {
+//   const [text, setText] = useState([]);
+//   const [data, setData] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
+//   function getData() {
+//     fetch(`https://dummyjson.com/products?limit=10&skip=10&select=${text}`)
+//       .then((res) => res.json())
+//       .then((el) => {
+//         setData(el.products[0]);
+//         setSecondData(el.products[0].images[0]);
+//       });
+//   }
+//   function handler(e) {
+//     setText(e.target.value);
+//   }
 
-  console.log(data);
-  //   useEffect(() => {
-  //     getData();
-  //   }, []);
+//   console.log(data);
+//   //   useEffect(() => {
+//   //     getData();
+//   //   }, []);
+//   return (
+//     <div className="container">
+//       <button onClick={getData}>Fetch</button>
+//       <input onChange={handler} value={text}></input>
+//       {/* {data &&
+//         data.map((el) => {
+//           <Card title={el.title} />;
+//         })} */}
+//       {data && (
+//         <Card title={data.title} brand={data.brand} images={secondData} />
+//       )}
+//     </div>
+//   );
+// }
+// export default App;
+//===================================================================
+function DrugiDomaci() {
+  const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
+
+  const getData = () => {
+    fetch(`https://dummyjson.com/products/search?q=${search}`)
+      .then((res) => res.json())
+      .then((products) => setData(products.products));
+  };
+
+  useEffect(() => {
+    getData();
+  }, [search]);
+
+  console.log(data, "DATTA");
+  console.log(search, "SEARCH");
+
   return (
     <div className="container">
-      <button onClick={getData}>Fetch</button>
-      <input onChange={handler} value={text}></input>
-      {/* {data &&
-        data.map((el) => {
-          <Card title={el.title} />;
-        })} */}
-      {data && (
-        <Card title={data.title} brand={data.brand} images={secondData} />
-      )}
+      <div className="searchWrapper">
+        <input
+          placeholder="Search..."
+          className="searchInput"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        {/* <button onClick={getData}>Search</button> */}
+      </div>
+
+      <div className="cardWrapper">
+        {data.map((product) => (
+          <Card product={product} key={product.id} />
+        ))}
+      </div>
     </div>
   );
 }
-export default App;
+
+export default DrugiDomaci;

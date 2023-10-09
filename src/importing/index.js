@@ -31,38 +31,53 @@
 // }
 
 // export default Card;
-import React from "react";
+//=================================================================
+// import React from "react";
 
-function Card({
-  brand,
-  capital,
-  category,
-  description,
-  id,
-  price,
-  stock,
-  images,
-  region,
-  title,
-}) {
-  const cardStyle = {
-    backgroundImage: `url(${images})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    width: "500px",
-    height: "420px",
-  };
+// function Card({
+//   brand,
+//   capital,
+//   category,
+//   description,
+//   id,
+//   price,
+//   stock,
+//   images,
+//   region,
+//   title,
+// }) {
+//   const cardStyle = {
+//     backgroundImage: `url(${images})`,
+//     backgroundSize: "cover",
+//     backgroundPosition: "center",
+//     width: "500px",
+//     height: "420px",
+//   };
 
+//   return (
+//     <div className="minidiv" style={cardStyle}>
+//       {/* <h1>Brand: {brand}</h1> */}
+//       <h1>Category: {category}</h1>
+//       {/* <h1>Title:{title}</h1> */}
+//       <h1>{id}</h1>
+//       <h1>Brand: {brand}</h1>
+//       {/* <h1>Capital: {capital}</h1> */}
+//       {/* <h1>Region {region}</h1> */}
+//       {/* <h1>Description: {description}</h1> */}
+//     </div>
+//   );
+// }
+
+// export default Card;
+//=======================================================
+function Card({ product }) {
   return (
-    <div className="minidiv" style={cardStyle}>
-      {/* <h1>Brand: {brand}</h1> */}
-      <h1>Category: {category}</h1>
-      <h1>Title:{title}</h1>
-      <h1>{id}</h1>
-      <h1>Brand: {brand}</h1>
-      <h1>Capital: {capital}</h1>
-      <h1>Region {region}</h1>
-      <h1>Description: {description}</h1>
+    <div className="card">
+      <p>{product.title}</p>
+      <p>{product.brand}</p>
+      <p>{product.category}</p>
+      <p>{product.description}</p>
+      <p>{product.price}</p>
     </div>
   );
 }
