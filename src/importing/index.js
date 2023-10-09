@@ -42,6 +42,8 @@ function Card({
   price,
   stock,
   images,
+  region,
+  title,
 }) {
   const cardStyle = {
     backgroundImage: `url(${images})`,
@@ -55,7 +57,10 @@ function Card({
     <div className="minidiv" style={cardStyle}>
       {/* <h1>Brand: {brand}</h1> */}
       <h1>Category: {category}</h1>
+      <h1>{title}</h1>
+      <h1>{id}</h1>
       <h1>Capital: {capital}</h1>
+      <h1>Region {region}</h1>
       {/* <h1>Description: {description}</h1> */}
     </div>
   );

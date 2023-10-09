@@ -1215,14 +1215,14 @@ import Buton from "./importing/buton";
 // function App() {
 //   const [defaultdata, setDeafultData] = useState([]);
 //   const [array, setArray] = useState([]);
-//   const [filtered, setFiltered] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
 
 //   const getData = () => {
 //     fetch("https://dummyjson.com/products")
 //       .then((res) => res.json())
 //       .then((json) => {
 //         setDeafultData(json.products);
-//         setFiltered(json.products);
+//         setSecondData(json.products);
 //         const categories = json.products.map((el) => el.category);
 //         const bezDuplikata = [...new Set(categories)];
 //         setArray(bezDuplikata);
@@ -1233,14 +1233,14 @@ import Buton from "./importing/buton";
 //   }, []);
 
 //   console.log(defaultdata);
-
+//   console.log(array);
 //   return (
 //     <div className="container">
 //       <div className="divForButtons">
 //         {array.map((el) => (
 //           <button
 //             onClick={() =>
-//               setFiltered(defaultdata.filter((e) => e.category == el))
+//               setSecondData(defaultdata.filter((e) => e.category == el))
 //             }
 //           >
 //             {el}
@@ -1248,8 +1248,8 @@ import Buton from "./importing/buton";
 //         ))}
 //       </div>
 //       <div className="secondmain">
-//         {array.length > 0 ? (
-//           filtered.map((el) => (
+//         {true ? (
+//           secondData.map((el) => (
 //             <div className="main">
 //               <Card
 //                 images={el.images[0]}
@@ -1259,6 +1259,7 @@ import Buton from "./importing/buton";
 //                 id={el.id}
 //                 price={el.price}
 //                 stock={el.stock}
+//                 title={el.title}
 //               />
 //               <div className="stars">
 //                 <ReactStars count={5} size={24} value={el.rating} />
@@ -1462,44 +1463,112 @@ import Buton from "./importing/buton";
 
 // export default App;
 // `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
+// function App() {
+//   const [text, setText] = useState([]);
+//   const [data, setData] = useState(false);
+//   const [secondData, setSecondData] = useState([]);
+//   function getData() {
+//     fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
+//       .then((res) => res.json())
+//       .then((el) => {
+//         setData(el[0]);
+//         setSecondData(el[0].flags.svg);
+//         console.log(el[0].flag);
+//         console.log(el[0].flag);
+//         console.log(el);
+//       });
+//   }
+//   function handler(e) {
+//     setText(e.target.value);
+//   }
+//   useEffect(() => {
+//     console.log("ADSDSA");
+//   }, [data]);
+
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <div className="secondmini">
+//           <input placeholder="country" value={text} onChange={handler}></input>
+//           <button onClick={getData}>Search</button>
+//         </div>
+//         {data ? (
+//           <Card
+//             category={data.name.common}
+//             images={secondData}
+//             capital={data.capital}
+//             region={data.region
+//             }
+//           />
+//         ) : (
+//           <h1>nema podataka</h1>
+//         )}
+//       </div>
+//     </div>
+//     // data [0]. flags. svg;
+//   );
+// }
+// export default App;
+//=====================================================
+import ReactStars from "react-stars";
 function App() {
-  const [text, setText] = useState([]);
-  const [data, setData] = useState(false);
+  const [defaultdata, setDeafultData] = useState([]);
+  const [array, setArray] = useState([]);
   const [secondData, setSecondData] = useState([]);
-  function getData() {
-    fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
+
+  const getData = () => {
+    fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((el) => {
-        setData(el[0]);
-        setSecondData(el[0].flags.svg);
-        console.log(el[0].flag);
-        console.log(el[0].flag);
-        console.log(el);
+      .then((json) => {
+        setDeafultData(json.products);
+        setSecondData(json.products);
+        const categories = json.products.map((el) => el.id);
+        // const bezDuplikata = [...new Set(categories)];
+        setArray(categories);
       });
-  }
-  function handler(e) {
-    setText(e.target.value);
-  }
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+
+  console.log(defaultdata);
+  console.log(array);
   return (
     <div className="container">
-      <div className="main">
-        <div className="secondmini">
-          <input placeholder="country" value={text} onChange={handler}></input>
-          <button onClick={getData}>Search</button>
-        </div>
-        {data ? (
-          <Card
-            category={data.name.common}
-            images={secondData}
-            capital={data.capital}
-          />
+      <div className="divForButtons">
+        {array.map((el) => (
+          <button
+            onClick={() => setSecondData(defaultdata.filter((e) => e.id == el))}
+          >
+            {el}
+          </button>
+        ))}
+      </div>
+      <div className="secondmain">
+        {true ? (
+          secondData.map((el) => (
+            <div className="main">
+              <Card
+                images={el.images[0]}
+                brand={el.brand}
+                category={el.category}
+                description={el.description}
+                id={el.id}
+                price={el.price}
+                stock={el.stock}
+                title={el.title}
+              />
+              <div className="stars">
+                <ReactStars count={5} size={24} value={el.rating} />
+              </div>
+            </div>
+          ))
         ) : (
-          <h1>nema podataka</h1>
+          <h1>trenuntno nema podatka</h1>
         )}
       </div>
     </div>
-    // data [0]. flags. svg;
   );
 }
+
 export default App;
-//===================================
