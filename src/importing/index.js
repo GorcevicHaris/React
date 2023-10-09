@@ -59,6 +59,7 @@ function Card({
       <h1>Category: {category}</h1>
       <h1>{title}</h1>
       <h1>{id}</h1>
+      <h1>Brand: {brand}</h1>
       <h1>Capital: {capital}</h1>
       <h1>Region {region}</h1>
       {/* <h1>Description: {description}</h1> */}

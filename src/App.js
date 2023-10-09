@@ -1360,46 +1360,45 @@ import Buton from "./importing/buton";
 // // export default App;
 // //  ======================================================================
 
-// // function App() {
-// //   const [data, setData] = useState([]);
-// //   const [filteredArray, setFilteredArray] = useState([]);
-// //   const [newData, setNewData] = useState([]);
+// function App() {
+//   const [data, setData] = useState([]);
+//   const [filteredArray, setFilteredArray] = useState([]);
+//   const [newData, setNewData] = useState([]);
 
-// //   useEffect(() => {
-// //     fetch("https://dummyjson.com/products")
-// //       .then((res) => res.json())
-// //       .then((json) => {
-// //         setData(json.products);
-// //         const categories = json.products.map((el) => el.category);
-// //         setFilteredArray([...new Set(categories)]);
-// //         setNewData(json.products);
-// //       });
-// //   }, []);
-// //   console.log(filteredArray);
+//   useEffect(() => {
+//     fetch("https://dummyjson.com/products")
+//       .then((res) => res.json())
+//       .then((json) => {
+//         setData(json.products);
+//         const categories = json.products.map((el) => el.category);
+//         setFilteredArray([...new Set(categories)]);
+//         setNewData(json.products);
+//       });
+//   }, []);
+//   console.log(filteredArray);
 
-// //   return (
-// //     <div className="container">
-// //       <div className="main">
-// //         {filteredArray.map((el) => (
-// //           <button
-// //             onClick={() => setData(newData.filter((e) => e.category == el))}
-// //           >
-// //             {el}
-// //           </button>
-// //         ))}
-// //       </div>
-// //       {data.map((el) => (
-////asd
-// //         <Card
-// //           brand={el.brand}
-// //           description={el.description}
-// //           images={el.images[0]}
-// //         />
-// //       ))}
-// //     </div>
-// //   );
-// // }
-// // export default App;
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         {filteredArray.map((el) => (
+//           <button
+//             onClick={() => setData(newData.filter((e) => e.category == el))}
+//           >
+//             {el}
+//           </button>
+//         ))}
+//       </div>
+//       {data.map((el) => (
+//         <Card
+//           brand={el.brand}
+//           description={el.description}
+//           images={el.images[0]}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+// export default App;
 // //===============================================================
 // function App() {
 //   const [inputText, setInputText] = useState({
@@ -1425,26 +1424,22 @@ import Buton from "./importing/buton";
 // // ============================================================================
 // function App() {
 //   const [text, setText] = useState([]);
-//   const [data, setData] = useState({});
-//   const [filteredArray, setFilteredArray] = useState([]);
-//   const [secondData, setSecondData] = useState([]);
+//   const [data, setData] = useState([]);
+//   const [array, setArray] = useState([true]);
 //   function getData() {
 //     console.log(text);
-//     fetch(`https://dummyjson.com/products/search?q=${text}`)
+//     fetch(`https://dummyjson.com/products/search?q=phone`)
 //       .then((res) => res.json())
 //       .then((json) => {
 //         const categories = json.products.map((el) => el.category);
-//         console.log("categroy", categories);
-//         setData([...new Set(categories)]);
-//         // console.log(noDuplicates);
-//         // setFilteredArray(noDuplicates[0]);
-//         // console.log(filteredArray);
+//         console.log(json.products[2].category);
+//         console.log(categories);
+//         console.log();
+//         setData(json.products);
+//         setArray(data);
 //       });
 //   }
 //   console.log(data);
-//   // useEffect(() => {
-//   //   getData();
-//   // }, []);
 
 //   function handler(e) {
 //     setText(e.target.value);
@@ -1453,16 +1448,20 @@ import Buton from "./importing/buton";
 //   return (
 //     <div className="container">
 //       <div className="main">
-//         <input value={text} onChange={handler}></input>
-//         <button onClick={getData}></button>
-//         {data && <Card category={data[0]} />}
+//         <input placeholder="text" value={text} onChange={handler}></input>
+//         <button onClick={getData}>Find</button>
+//         {data.map((el) => {
+//           {
+//             return <Card category={el.category} brand={el.brand} />;
+//           }
+//         })}
 //       </div>
 //     </div>
 //   );
 // }
 
 // export default App;
-// `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
+//=================================================================
 // function App() {
 //   const [text, setText] = useState([]);
 //   const [data, setData] = useState(false);
@@ -1471,8 +1470,9 @@ import Buton from "./importing/buton";
 //     fetch(`https://restcountries.com/v3.1/name/${text}?fullText=true`)
 //       .then((res) => res.json())
 //       .then((el) => {
-//         setData(el[0]);
-//         setSecondData(el[0].flags.svg);
+//         setData(el);
+
+//         // setSecondData(el[0].flags.svg);
 //         console.log(el[0].flag);
 //         console.log(el[0].flag);
 //         console.log(el);
@@ -1484,6 +1484,7 @@ import Buton from "./importing/buton";
 //   useEffect(() => {
 //     console.log("ADSDSA");
 //   }, [data]);
+//   console.log("data=", data);
 
 //   return (
 //     <div className="container">
@@ -1492,17 +1493,7 @@ import Buton from "./importing/buton";
 //           <input placeholder="country" value={text} onChange={handler}></input>
 //           <button onClick={getData}>Search</button>
 //         </div>
-//         {data ? (
-//           <Card
-//             category={data.name.common}
-//             images={secondData}
-//             capital={data.capital}
-//             region={data.region
-//             }
-//           />
-//         ) : (
-//           <h1>nema podataka</h1>
-//         )}
+//         {data && <Card capital={data[0].capital} images={data[0].flags.svg} />}
 //       </div>
 //     </div>
 //     // data [0]. flags. svg;
@@ -1510,65 +1501,69 @@ import Buton from "./importing/buton";
 // }
 // export default App;
 //=====================================================
-import ReactStars from "react-stars";
-function App() {
-  const [defaultdata, setDeafultData] = useState([]);
-  const [array, setArray] = useState([]);
-  const [secondData, setSecondData] = useState([]);
+// import ReactStars from "react-stars";
+// function App() {
+//   const [defaultdata, setDeafultData] = useState([]);
+//   const [array, setArray] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
 
-  const getData = () => {
-    fetch("https://dummyjson.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        setDeafultData(json.products);
-        setSecondData(json.products);
-        const categories = json.products.map((el) => el.id);
-        // const bezDuplikata = [...new Set(categories)];
-        setArray(categories);
-      });
-  };
-  useEffect(() => {
-    getData();
-  }, []);
+//   const getData = () => {
+//     fetch("https://dummyjson.com/products")
+//       .then((res) => res.json())
+//       .then((json) => {
+//         setDeafultData(json.products);
+//         setSecondData(json.products);
+//         const categories = json.products.map((el) => el.id);
+//         // const bezDuplikata = [...new Set(categories)];
+//         setArray(categories);
+//       });
+//   };
+//   useEffect(() => {
+//     getData();
+//   }, []);
 
-  console.log(defaultdata);
-  console.log(array);
-  return (
-    <div className="container">
-      <div className="divForButtons">
-        {array.map((el) => (
-          <button
-            onClick={() => setSecondData(defaultdata.filter((e) => e.id == el))}
-          >
-            {el}
-          </button>
-        ))}
-      </div>
-      <div className="secondmain">
-        {true ? (
-          secondData.map((el) => (
-            <div className="main">
-              <Card
-                images={el.images[0]}
-                brand={el.brand}
-                category={el.category}
-                description={el.description}
-                id={el.id}
-                price={el.price}
-                stock={el.stock}
-                title={el.title}
-              />
-              <div className="stars">
-                <ReactStars count={5} size={24} value={el.rating} />
-              </div>
-            </div>
-          ))
-        ) : (
-          <h1>trenuntno nema podatka</h1>
-        )}
-      </div>
-    </div>
-  );
-}
+//   console.log(defaultdata);
+//   console.log(array);
+//   return (
+//     <div className="container">
+//       <div className="divForButtons">
+//         {array.map((el) => (
+//           <button
+//             onClick={() => setSecondData(defaultdata.filter((e) => e.id == el))}
+//           >
+//             {el}
+//           </button>
+//         ))}
+//       </div>
+//       <div className="secondmain">
+//         {true ? (
+//           secondData.map((el) => (
+//             <div className="main">
+//               <Card
+//                 images={el.images[0]}
+//                 brand={el.brand}
+//                 category={el.category}
+//                 description={el.description}
+//                 id={el.id}
+//                 price={el.price}
+//                 stock={el.stock}
+//                 title={el.title}
+//               />
+//               <div className="stars">
+//                 <ReactStars count={5} size={24} value={el.rating} />
+//               </div>
+//             </div>
+//           ))
+//         ) : (
+//           <h1>trenuntno nema podatka</h1>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+//==========================================================
+
+// function App() {}
+// export default App;
