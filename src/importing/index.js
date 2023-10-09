@@ -57,7 +57,7 @@ function Card({
     <div className="minidiv" style={cardStyle}>
       {/* <h1>Brand: {brand}</h1> */}
       <h1>Category: {category}</h1>
-      <h1>{title}</h1>
+      <h1>Title:{title}</h1>
       <h1>{id}</h1>
       <h1>Brand: {brand}</h1>
       <h1>Capital: {capital}</h1>

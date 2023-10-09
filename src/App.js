@@ -1565,5 +1565,34 @@ import Buton from "./importing/buton";
 // export default App;
 //==========================================================
 
-// function App() {}
+// function App() {
+//   const [text, setText] = useState([]);
+//   const [data, setData] = useState([]);
+//   function getData() {
+//     fetch(`https://dummyjson.com/products?limit=10&skip=10&select=${text}`)
+//       .then((res) => res.json())
+//       .then((el) => {
+//         setData(el.products[0].title);
+//       });
+//   }
+//   function handler(e) {
+//     setText(e.target.value);
+//   }
+
+//   console.log(data);
+//   //   useEffect(() => {
+//   //     getData();
+//   //   }, []);
+//   return (
+//     <div className="container">
+//       <button onClick={getData}>Fetch</button>
+//       <input onChange={handler} value={text}></input>
+//       {/* {data &&
+//         data.map((el) => {
+//           <Card title={el.title} />;
+//         })} */}
+//       {data && <Card title={data} />}
+//     </div>
+//   );
+// }
 // export default App;
