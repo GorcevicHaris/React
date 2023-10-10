@@ -1739,42 +1739,45 @@ import Buton from "./importing/buton";
 //       </div>
 //     </div>
 //   );
+// // }
+// // export default App;
+// //=============================================================
+// function App() {
+//   const [search, setSearch] = useState();
+//   const [secondArray, setSecondArray] = useState([]);
+//   const [array, setArray] = useState([]);
+//   const [check, setCheck] = useState(false);
+//   function data() {
+//     setArray([...array, search]);
+//     setSecondArray([...array, search]);
+//     setSearch("");
+//   }
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <div className="secondminicontainer">
+//           <input
+//             value={search}
+//             placeholder="Text"
+//             onChange={(e) => setSearch(e.target.value)}
+//           ></input>
+//           <button onClick={data}>Add</button>
+//         </div>
+//         <div className="minicontainer">
+//           {array.map((el) => (
+//             <div className="secondmini">
+//               {el}
+//               <button
+//                 style={{ borderRadius: "6px" }}
+//                 onClick={() => setArray(array.filter((e) => e != el))}
+//               >
+//                 Remove
+//               </button>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </div>
+//   );
 // }
 // export default App;
-//=============================================================
-function App() {
-  const [search, setSearch] = useState();
-  const [secondArray, setSecondArray] = useState([]);
-  const [array, setArray] = useState([]);
-  const [check, setCheck] = useState(false);
-  function data() {
-    setArray([...array, search]);
-    setSecondArray([...array, search]);
-    setSearch("");
-  }
-  return (
-    <div className="container">
-      <div className="main">
-        <div className="secondminicontainer">
-          <input
-            value={search}
-            placeholder="Text"
-            onChange={(e) => setSearch(e.target.value)}
-          ></input>
-          <button onClick={data}>Add</button>
-        </div>
-        <div className="minicontainer">
-          {array.map((el) => (
-            <div className="secondmini">
-              {el}
-              <button onClick={() => setArray(array.filter((e) => e != el))}>
-                Remove
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-export default App;
