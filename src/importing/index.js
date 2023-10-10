@@ -56,7 +56,7 @@
 
 //   return (
 //     <div className="minidiv" style={cardStyle}>
-//       {/* <h1>Brand: {brand}</h1> */}
+//       {/* <h1>Brand:   x{brand}</h1> */}
 //       <h1>Category: {category}</h1>
 //       {/* <h1>Title:{title}</h1> */}
 //       <h1>{id}</h1>
@@ -76,8 +76,7 @@ function Card({ product }) {
       <p>{product.title}</p>
       <p>{product.brand}</p>
       <p>{product.category}</p>
-      <p>{product.description}</p>
-      <p>{product.price}</p>
+      <p>{product.id}</p>
     </div>
   );
 }

@@ -973,6 +973,7 @@ import Buton from "./importing/buton";
 // export default App;
 
 // //======================================================
+//todolist
 // function App() {
 //   const [inputText, setInputText] = useState("");
 //   const [array, setArray] = useState([]);
@@ -1643,52 +1644,137 @@ import Buton from "./importing/buton";
 
 // export default DrugiDomaci;
 //===============================================================
-function DrugiDomaci() {
-  const [data, setData] = useState([]);
-  const [secondData, setSecondData] = useState([]);
+// function DrugiDomaci() {
+//   const [data, setData] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
 
-  const [search, setSearch] = useState("");
+//   const [search, setSearch] = useState("");
 
-  const getData = () => {
-    fetch(`https://dummyjson.com/products/search?q=${search}`)
-      .then((res) => res.json())
-      .then((products) => {
-        setData(products.products);
-      });
-  };
-  const getSecondData = () => {
-    fetch(`https://dummyjson.com/products/search?q=${search}`)
-      .then((res) => res.json())
-      .then((products) => {
-        setSecondData(products.products);
-      });
-  };
+//   const getData = () => {
+//     fetch(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((res) => res.json())
+//       .then((products) => {
+//         setData(products.products);
+//       });
+//   };
+//   const getSecondData = () => {
+//     fetch(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((res) => res.json())
+//       .then((products) => {
+//         setSecondData(products.products);
+//       });
+//   };
 
-  useEffect(() => {
-    getData();
-  }, [search]);
-  //// ovo gore je dinamicko izvrsava se na svaku promenu
-  useEffect(() => {
-    getSecondData();
-  }, []);
-  // ovo gore je inicijalno izvrasava se samo jednom
+//   useEffect(() => {
+//     getData();
+//   }, [search]);
+//   //// ovo gore je dinamicko izvrsava se na svaku promenu
+//   useEffect(() => {
+//     getSecondData();
+//   }, []);
+//   // ovo gore je inicijalno izvrasava se samo jednom
+//   console.log(data);
+//   return (
+//     <div className="container">
+//       <div className="searchWrapper">
+//         <select onChange={(e) => setSearch(e.target.value)}>
+//           {secondData.map((el) => (
+//             <option>{el.title}</option>
+//           ))}
+//         </select>
+//       </div>
+//       <div className="cardWrapper">
+//         {data.map((product) => (
+//           <Card product={product} key={product.id} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default DrugiDomaci;
+//===========================================================
+// function App() {
+//   const [search, setSearch] = useState("");
+//   const [data, setData] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
+
+//   const getData = () => {
+//     fetch(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((res) => res.json())
+//       .then((products) => {
+//         setData(products.products);
+//       });
+//   };
+//   const getSecondData = () => {
+//     fetch(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((res) => res.json())
+//       .then((products) => {
+//         setSecondData(products.products);
+//       });
+//   };
+//   useEffect(() => {
+//     getData();
+//   }, [search]);
+
+//   useEffect(() => {
+//     getSecondData();
+//   }, []);
+//   function handler(e) {
+//     setSearch(e.target.value);
+//   }
+//   return (
+//     <div className="container">
+//       <div className="searchWrapper">
+//         <select onChange={handler}>
+//           {secondData.map((el) => (
+//             <option>{el.title}</option>
+//           ))}
+//         </select>
+//       </div>
+//       <div className="cardWrapper">
+//         {data.map((product) => (
+//           <Card product={product} key={product.id} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
+//=============================================================
+function App() {
+  const [search, setSearch] = useState();
+  const [secondArray, setSecondArray] = useState([]);
+  const [array, setArray] = useState([]);
+  const [check, setCheck] = useState(false);
+  function data() {
+    setArray([...array, search]);
+    setSecondArray([...array, search]);
+    setSearch("");
+  }
   return (
     <div className="container">
-      <div className="searchWrapper">
-        <select onChange={(e) => setSearch(e.target.value)}>
-          {secondData.map((el) => (
-            <option>{el.title}</option>
+      <div className="main">
+        <div className="secondminicontainer">
+          <input
+            value={search}
+            placeholder="Text"
+            onChange={(e) => setSearch(e.target.value)}
+          ></input>
+          <button onClick={data}>Add</button>
+        </div>
+        <div className="minicontainer">
+          {array.map((el) => (
+            <div className="secondmini">
+              {el}
+              <button onClick={() => setArray(array.filter((e) => e != el))}>
+                Remove
+              </button>
+            </div>
           ))}
-        </select>
-      </div>
-
-      <div className="cardWrapper">
-        {data.map((product) => (
-          <Card product={product} key={product.id} />
-        ))}
+        </div>
       </div>
     </div>
   );
 }
-
-export default DrugiDomaci;
+export default App;
