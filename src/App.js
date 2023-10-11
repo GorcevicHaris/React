@@ -8,6 +8,7 @@ import Slika3 from "./1085299-1.jpg";
 import Slika4 from "./2028fae76ba24df78a10184fbf805007.jpg";
 import { useState, useEffect } from "react";
 import Buton from "./importing/buton";
+import axios from "axios";
 
 // // function App() {
 // //   return (
@@ -1693,7 +1694,7 @@ import Buton from "./importing/buton";
 // }
 
 // export default DrugiDomaci;
-//===========================================================
+// //===========================================================
 // function App() {
 //   const [search, setSearch] = useState("");
 //   const [data, setData] = useState([]);
@@ -1739,8 +1740,8 @@ import Buton from "./importing/buton";
 //       </div>
 //     </div>
 //   );
-// // }
-// // export default App;
+// }
+// export default App;
 // //=============================================================
 // function App() {
 //   const [search, setSearch] = useState();
@@ -1781,61 +1782,65 @@ import Buton from "./importing/buton";
 //   );
 // }
 // export default App;
-//==============================================================================
-function App() {
-  const [search, setSearch] = useState("");
-  const [buttons, setButtons] = useState([
-    { name: "1", value: 1 },
-    { name: "2", value: 2 },
-    { name: "3", value: 3 },
-    { name: "4", value: 4 },
-    { name: "5", value: 5 },
-    { name: "6", value: 6 },
-    { name: "7", value: 7 },
-    { name: "8", value: 9 },
-    { name: "9", value: 9 },
-    { name: "0", value: 0 },
-    { name: "*", value: "*" },
-    { name: "/", value: "/" },
-    { name: "+", value: "+" },
-    { name: "-", value: "-" },
-    { name: ".", value: "." },
-  ]);
-  console.log(search);
+// //==============================================================================
+// function App() {
+//   const [search, setSearch] = useState("");
+//   const [buttons, setButtons] = useState([
+//     { name: "1", value: 1 },
+//     { name: "2", value: 2 },
+//     { name: "3", value: 3 },
+//     { name: "4", value: 4 },
+//     { name: "5", value: 5 },
+//     { name: "6", value: 6 },
+//     { name: "7", value: 7 },
+//     { name: "8", value: 9 },
+//     { name: "9", value: 9 },
+//     { name: "0", value: 0 },
+//     { name: "*", value: "*" },
+//     { name: "/", value: "/" },
+//     { name: "+", value: "+" },
+//     { name: "-", value: "-" },
+//     { name: ".", value: "." },
+//   ]);
+//   console.log(search);
 
-  const handleButtonClick = (value) => {
-    setSearch(search + value);
-  };
-  const evalHandler = (value) => {
-    setSearch((value = eval(search)));
-  };
+//   const handleButtonClick = (value) => {
+//     setSearch(search + value);
+//   };
+//   const evalHandler = (value) => {
+//     setSearch((value = eval(search)));
+//   };
 
-  return (
-    <div className="container">
-      <div className="calculator">
-        <div className="display">
-          <input
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            type="text"
-          />
-        </div>
-        <div className="buttons">
-          {buttons.map((el) => (
-            <button onClick={() => handleButtonClick(el.value)}>
-              {el.name}
-            </button>
-          ))}
-          <button onClick={evalHandler} value={"="}>
-            =
-          </button>
-          <button onClick={() => setSearch("")} value={"AC"}>
-            AC
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+//   return (
+//     <div className="container">
+//       <div className="calculator">
+//         <div className="display">
+//           <input
+//             value={search}
+//             onChange={(e) => setSearch(e.target.value)}
+//             type="text"
+//           />
+//         </div>
+//         <div className="buttons">
+//           {buttons.map((el) => (
+//             <button onClick={() => handleButtonClick(el.value)}>
+//               {el.name}
+//             </button>
+//           ))}
+//           <button onClick={evalHandler} value={"="}>
+//             =
+//           </button>
+//           <button onClick={() => setSearch("")} value={"AC"}>
+//             AC
+//           </button>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
 
-export default App;
+// export default App;
+//====================================================
+// const getData = (){
+//   axios.length
+// }
