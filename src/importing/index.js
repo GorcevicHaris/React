@@ -86,3 +86,20 @@ function Card({ title, brand, category, image, id }) {
 }
 
 export default Card;
+
+// function Card({ product }) {
+//   // let cardStyle = {
+//   //   background: `url(${image})`,
+//   //   backgroundsize: "cover",
+//   // };
+//   return (
+//     <div className="card">
+//       <p>{product.title}</p>
+//       <p>{product.brand}</p>
+//       <p>{product.category}</p>
+//       <p>{product.id}</p>
+//     </div>
+//   );
+// }
+
+// export default Card;

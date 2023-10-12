@@ -1847,28 +1847,36 @@ function App() {
   const [secondData, setSecondData] = useState([]);
 
   function getData() {
-    axios(`https://dummyjson.com/products/categories?q=${search}`).then((el) =>
-      setData(el.data)
-    );
+    axios
+      .get(`https://dummyjson.com/products`)
+      .then((el) => setSecondData(el.data.products));
   }
   function getCategoryData() {
-    axios(`https://dummyjson.com/products`).then((el) => {
-      setSecondData(el.data.products);
-    });
+    axios
+      .get(`https://dummyjson.com/products/categories?q=${search}`)
+      .then((el) => {
+        setData(el.data);
+      });
   }
   useEffect(() => {
-    getData();
+    getCategoryData();
   }, [search]);
 
   useEffect(() => {
-    getCategoryData();
+    getData();
   }, []);
+
+  console.log("search", search);
+  console.log("data", data);
+  console.log("secondData", secondData);
   return (
     <div className="container">
       <div className="mini-container">
         <select value={search} onChange={(e) => setSearch(e.target.value)}>
           {data.map((el) => (
-            <option onChange={(e) => setSearch(e.target.value)}>{el} </option>
+            <option key={el} value={el}>
+              {el}
+            </option>
           ))}
         </select>
       </div>
@@ -1885,3 +1893,100 @@ function App() {
   );
 }
 export default App;
+//================================================================================
+// function DrugiDomaci() {
+//   const [data, setData] = useState([]);
+//   const [categories, setCategories] = useState([]);
+//   const [search, setSearch] = useState("");
+//   const [singleCategory, setSingleCategory] = useState("");
+
+//   const BASE_URL = "https://dummyjson.com/products";
+
+//   const getData2 = () => {
+//     axios
+//       .get(`${BASE_URL}/search?q=${search}`)
+//       .then((res) => setData(res.data.products));
+//   };
+
+//   const getCategories = () => {
+//     axios
+//       .get(`${BASE_URL}/categories`)
+//       .then((data) => setCategories(data.data));
+//   };
+
+//   const getDataByCategory = (category, searchParam = "") => {
+//     axios
+//       .get(`${BASE_URL}/category/${category}?q=${searchParam}`)
+//       // .get(`${BASE_URL}/category/${singleCategory}`)
+//       .then((res) => setData(res.data.products));
+//   };
+
+//   useEffect(() => {
+//     getData2();
+//     getCategories();
+//   }, []);
+
+//   return (
+//     <div className="container">
+//       <div className="searchWrapper">
+//         <input
+//           placeholder="Search..."
+//           className="searchInput"
+//           value={search}
+//           onChange={(e) => {
+//             setSearch(e.target.value);
+//             getDataByCategory(singleCategory, e.target.value);
+//           }}
+//         />
+//         <img
+//           onClick={getData2}
+//           src="search-svgrepo-com.svg"
+//           height={30}
+//           width={30}
+//         />
+
+//         <select
+//           placeholder="Izaberi kategoriju"
+//           style={{
+//             width: "200px",
+//           }}
+//           className="searchInput"
+//           onChange={(e) => {
+//             setSingleCategory(e.target.value);
+//             getDataByCategory(e.target.value);
+//           }}
+//         >
+//           <option value="" disabled selected>
+//             Select your option
+//           </option>
+//           {categories.map((categorie) => (
+//             <option key={categorie} value={categorie}>
+//               {categorie}
+//             </option>
+//           ))}
+//         </select>
+//       </div>
+
+//       <div className="cardWrapper">
+//         {/* <KarticaDomaci />
+//           <KarticaDomaci /> */}
+//         {data.map((product) => (
+//           //   <KarticaDomaci
+//           //     title={product.title}
+//           //     brand={product.brand}
+//           //     category={product.category}
+//           //     description={product.description}
+//           //     key={product.id}
+//           //   />
+//           <Card product={product} key={product.id} />
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default DrugiDomaci;
+//=========================================================================
+// function App (){
+//   // axios.get
+// }
