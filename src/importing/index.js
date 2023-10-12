@@ -70,13 +70,17 @@
 
 // export default Card;
 //=======================================================
-function Card({ product }) {
+function Card({ title, brand, category, image, id }) {
+  let cardStyle = {
+    background: `url(${image})`,
+    backgroundsize: "cover",
+  };
   return (
-    <div className="card">
-      <p>{product.title}</p>
-      <p>{product.brand}</p>
-      <p>{product.category}</p>
-      <p>{product.id}</p>
+    <div style={cardStyle} className="card">
+      <p>{title}</p>
+      <p>{brand}</p>
+      <p>{category}</p>
+      <p>{id}</p>
     </div>
   );
 }

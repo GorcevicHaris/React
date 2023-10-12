@@ -1644,7 +1644,7 @@ import axios from "axios";
 // }
 
 // export default DrugiDomaci;
-//===============================================================
+// ===============================================================
 // function DrugiDomaci() {
 //   const [data, setData] = useState([]);
 //   const [secondData, setSecondData] = useState([]);
@@ -1841,6 +1841,47 @@ import axios from "axios";
 
 // export default App;
 //====================================================
-// const getData = (){
-//   axios.length
-// }
+function App() {
+  const [search, setSearch] = useState("");
+  const [data, setData] = useState([]);
+  const [secondData, setSecondData] = useState([]);
+
+  function getData() {
+    axios(`https://dummyjson.com/products/categories?q=${search}`).then((el) =>
+      setData(el.data)
+    );
+  }
+  function getCategoryData() {
+    axios(`https://dummyjson.com/products`).then((el) => {
+      setSecondData(el.data.products);
+    });
+  }
+  useEffect(() => {
+    getData();
+  }, [search]);
+
+  useEffect(() => {
+    getCategoryData();
+  }, []);
+  return (
+    <div className="container">
+      <div className="mini-container">
+        <select value={search} onChange={(e) => setSearch(e.target.value)}>
+          {data.map((el) => (
+            <option onChange={(e) => setSearch(e.target.value)}>{el} </option>
+          ))}
+        </select>
+      </div>
+      {secondData.map((el) => (
+        <Card
+          key={el.title}
+          title={el.title}
+          brand={el.brand}
+          category={el.category}
+          image={el.images[0]}
+        />
+      ))}
+    </div>
+  );
+}
+export default App;
