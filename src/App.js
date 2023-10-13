@@ -1711,7 +1711,6 @@ import axios from "axios";
 //     fetch(`https://dummyjson.com/products/search?q=${search}`)
 //       .then((res) => res.json())
 //       .then((products) => {
-//         setSecondData(products.products);
 //       });
 //   };
 //   useEffect(() => {
@@ -1845,11 +1844,17 @@ function App() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const [secondData, setSecondData] = useState([]);
+  const [tryed, setTryed] = useState([]);
 
   function getData() {
     axios
       .get(`https://dummyjson.com/products`)
       .then((el) => setSecondData(el.data.products));
+  }
+  function trying() {
+    axios
+      .get(`https://dummyjson.com/products/categories`)
+      .then((el) => setTryed(el.data));
   }
   function getCategoryData() {
     axios
@@ -1859,13 +1864,14 @@ function App() {
       });
   }
   useEffect(() => {
-    getCategoryData();
-  }, [search]);
-
-  useEffect(() => {
     getData();
+    trying();
   }, []);
 
+  useEffect(() => {
+    getCategoryData();
+  }, [search]);
+  console.log(tryed, "tryed");
   console.log("search", search);
   console.log("data", data);
   console.log("secondData", secondData);
@@ -1880,14 +1886,8 @@ function App() {
           ))}
         </select>
       </div>
-      {secondData.map((el) => (
-        <Card
-          key={el.title}
-          title={el.title}
-          brand={el.brand}
-          category={el.category}
-          image={el.images[0]}
-        />
+      {tryed.map((el) => (
+        <Card key={el.title} category={el} title={el.title} />
       ))}
     </div>
   );
