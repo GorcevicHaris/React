@@ -365,7 +365,7 @@
     padding-left: 5px;
   }
   .container {
-    min-height: 100vh;
+    min-height: 50vh;
     width: 100vw;
     background-color: #f7ede2;
     display: flex;

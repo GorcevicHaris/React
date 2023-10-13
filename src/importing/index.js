@@ -44,6 +44,7 @@ function Card({
   stock,
   images,
   region,
+  discountPercentage,
   title,
 }) {
   const cardStyle = {
@@ -63,7 +64,7 @@ function Card({
       <h1>Brand: {brand}</h1>
       <h1>Capital: {capital}</h1>
       <h1>Region {region}</h1>
-      <h1>Description: {description}</h1>
+      <h1>discountPercentage: {discountPercentage}</h1>
     </div>
   );
 }
@@ -98,8 +99,11 @@ export default Card;
 //       <p>{product.brand}</p>
 //       <p>{product.category}</p>
 //       <p>{product.id}</p>
+//       <p>{product.discountPercentage}</p>
 //     </div>
 //   );
 // }
 
 // export default Card;
+//state lifting
+// props driling

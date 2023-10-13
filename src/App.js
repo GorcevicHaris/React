@@ -1939,58 +1939,58 @@ import axios from "axios";
 
 // export default DrugiDomaci;
 //=========================================================================
-function App() {
-  const [search, setSearch] = useState("");
-  const [data, setData] = useState([]);
-  const [secondData, setSecondData] = useState([]);
+// function App() {
+//   const [search, setSearch] = useState("");
+//   const [data, setData] = useState([]);
+//   const [secondData, setSecondData] = useState([]);
 
-  function getCategoryData() {
-    axios
-      .get(`https://dummyjson.com/products/categories${search}`)
-      .then((el) => {
-        setData(el.data);
-      });
-  }
-  function getData() {
-    axios
-      .get(`https://dummyjson.com/products/search?q=${search}`)
-      .then((el) => setSecondData(el.data.products));
-  }
+//   function getCategoryData() {
+//     axios
+//       .get(`https://dummyjson.com/products/categories${search}`)
+//       .then((el) => {
+//         setData(el.data);
+//       });
+//   }
+//   function getData() {
+//     axios
+//       .get(`https://dummyjson.com/products/search?q=${search}`)
+//       .then((el) => setSecondData(el.data.products));
+//   }
 
-  useEffect(() => {
-    getData();
-  }, [search]);
+//   useEffect(() => {
+//     getData();
+//   }, [search]);
 
-  useEffect(() => {
-    getCategoryData();
-  }, []);
-
-  console.log("search", search);
-  console.log("data", data);
-  console.log("secondData", secondData);
-  return (
-    <div className="container">
-      <div className="mini-container">
-        <select onChange={(e) => setSearch(e.target.value)} value={search}>
-          {data.map((el) => (
-            <option key={el}>{el}</option>
-          ))}
-        </select>
-      </div>
-      {secondData.map((el) => (
-        <Card
-          key={el.title}
-          title={el.title}
-          brand={el.brand}
-          category={el.category}
-          image={el.images[0]}
-          id={el.id}
-        />
-      ))}
-    </div>
-  );
-}
-export default App;
+//   useEffect(() => {
+//     getCategoryData();
+//   }, []);
+//   console.log("search", search);
+//   console.log("data", data);
+//   console.log("secondData", secondData);
+//   return (
+//     <div className="container">
+//       <div className="mini-container">
+//         <select onChange={(e) => setSearch(e.target.value)} value={search}>
+//           {data.map((el) => (
+//             <option key={el}>{el}</option>
+//           ))}
+//         </select>
+//       </div>
+//       {secondData.map((el) => (
+//         <Card
+//           key={el.title}
+//           title={el.title}
+//           brand={el.brand}
+//           category={el.category}
+//           image={el.images[0]}
+//           id={el.id}
+//           discountPercentage={el.discountPercentage}
+//         />
+//       ))}
+//     </div>
+//   );
+// }
+// export default App;
 // function App() {
 //   const [search, setSearch] = useState("");
 //   const [data, setData] = useState([]);
@@ -2097,3 +2097,6 @@ export default App;
 // }
 
 // export default DrugiDomaci;
+//=========================================================================================
+function App() {}
+export default App;
