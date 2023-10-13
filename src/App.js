@@ -1946,24 +1946,24 @@ function App() {
 
   function getCategoryData() {
     axios
-      .get(`https://dummyjson.com/products/categories/?q=${search}`)
+      .get(`https://dummyjson.com/products/categories${search}`)
       .then((el) => {
-        setData(el.data.products);
+        setData(el.data);
       });
   }
   function getData() {
     axios
-      .get(`https://dummyjson.com/products/search/?q=${search}`)
+      .get(`https://dummyjson.com/products/search?q=${search}`)
       .then((el) => setSecondData(el.data.products));
   }
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [search]);
 
   useEffect(() => {
     getCategoryData();
-  }, [search]);
+  }, []);
 
   console.log("search", search);
   console.log("data", data);
@@ -1973,7 +1973,7 @@ function App() {
       <div className="mini-container">
         <select onChange={(e) => setSearch(e.target.value)} value={search}>
           {data.map((el) => (
-            <option key={el}>{el.category}</option>
+            <option key={el}>{el}</option>
           ))}
         </select>
       </div>
@@ -1984,6 +1984,7 @@ function App() {
           brand={el.brand}
           category={el.category}
           image={el.images[0]}
+          id={el.id}
         />
       ))}
     </div>
