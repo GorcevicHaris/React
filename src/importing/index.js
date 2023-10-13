@@ -34,58 +34,58 @@
 //=================================================================
 // import React from "react";
 
-// function Card({
-//   brand,
-//   capital,
-//   category,
-//   description,
-//   id,
-//   price,
-//   stock,
-//   images,
-//   region,
-//   title,
-// }) {
-//   const cardStyle = {
-//     backgroundImage: `url(${images})`,
-//     backgroundSize: "cover",
-//     backgroundPosition: "center",
-//     width: "500px",
-//     height: "420px",
-//   };
-
-//   return (
-//     <div className="minidiv" style={cardStyle}>
-//       {/* <h1>Brand:   x{brand}</h1> */}
-//       <h1>Category: {category}</h1>
-//       {/* <h1>Title:{title}</h1> */}
-//       <h1>{id}</h1>
-//       <h1>Brand: {brand}</h1>
-//       {/* <h1>Capital: {capital}</h1> */}
-//       {/* <h1>Region {region}</h1> */}
-//       {/* <h1>Description: {description}</h1> */}
-//     </div>
-//   );
-// }
-
-// export default Card;
-//=======================================================
-function Card({ title, brand, category, image, id }) {
-  let cardStyle = {
-    background: `url(${image})`,
-    backgroundsize: "cover",
+function Card({
+  brand,
+  capital,
+  category,
+  description,
+  id,
+  price,
+  stock,
+  images,
+  region,
+  title,
+}) {
+  const cardStyle = {
+    backgroundImage: `url(${images})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    width: "500px",
+    height: "420px",
   };
+
   return (
-    <div style={cardStyle} className="card">
-      <p>{title}</p>
-      <p>{brand}</p>
-      <p>{category}</p>
-      <p>{id}</p>
+    <div className="minidiv" style={cardStyle}>
+      <h1>Brand: x{brand}</h1>
+      <h1>Category: {category}</h1>
+      <h1>Title:{title}</h1>
+      <h1>{id}</h1>
+      <h1>Brand: {brand}</h1>
+      <h1>Capital: {capital}</h1>
+      <h1>Region {region}</h1>
+      <h1>Description: {description}</h1>
     </div>
   );
 }
 
 export default Card;
+//=======================================================
+// function Card({ title, brand, category, image, id }) {
+//   let cardStyle = {
+//     background: `url(${image})`,
+//     backgroundsize: "cover",
+//   };
+//   return (
+//     <div style={cardStyle} className="card">
+//       <p>{title}</p>
+//       <p>{brand}</p>
+//       <p>{category}</p>
+//       <p>{id}</p>
+//     </div>
+//   );
+// }
+
+// export default Card;
 
 // function Card({ product }) {
 //   // let cardStyle = {
