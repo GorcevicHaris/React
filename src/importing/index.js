@@ -34,42 +34,42 @@
 //=================================================================
 // import React from "react";
 
-function Card({
-  brand,
-  capital,
-  category,
-  description,
-  id,
-  price,
-  stock,
-  images,
-  region,
-  discountPercentage,
-  title,
-}) {
-  const cardStyle = {
-    backgroundImage: `url(${images})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    width: "500px",
-    height: "420px",
-  };
+// function Card({
+//   brand,
+//   capital,
+//   category,
+//   description,
+//   id,
+//   price,
+//   stock,
+//   images,
+//   region,
+//   discountPercentage,
+//   title,
+// }) {
+//   const cardStyle = {
+//     backgroundImage: `url(${images})`,
+//     backgroundSize: "cover",
+//     backgroundPosition: "center",
+//     width: "500px",
+//     height: "420px",
+//   };
 
-  return (
-    <div className="minidiv" style={cardStyle}>
-      <h1>Brand: x{brand}</h1>
-      <h1>Category: {category}</h1>
-      <h1>Title:{title}</h1>
-      <h1>{id}</h1>
-      <h1>Brand: {brand}</h1>
-      <h1>Capital: {capital}</h1>
-      <h1>Region {region}</h1>
-      <h1>discountPercentage: {discountPercentage}</h1>
-    </div>
-  );
-}
+//   return (
+//     <div className="minidiv" style={cardStyle}>
+//       <h1>Brand: x{brand}</h1>
+//       <h1>Category: {category}</h1>
+//       <h1>Title:{title}</h1>
+//       <h1>{id}</h1>
+//       <h1>Brand: {brand}</h1>
+//       <h1>Capital: {capital}</h1>
+//       <h1>Region {region}</h1>
+//       <h1>discountPercentage: {discountPercentage}</h1>
+//     </div>
+//   );
+// }
 
-export default Card;
+// export default Card;
 //=======================================================
 // function Card({ title, brand, category, image, id }) {
 //   let cardStyle = {
@@ -88,22 +88,22 @@ export default Card;
 
 // export default Card;
 
-// function Card({ product }) {
-//   // let cardStyle = {
-//   //   background: `url(${image})`,
-//   //   backgroundsize: "cover",
-//   // };
-//   return (
-//     <div className="card">
-//       <p>{product.title}</p>
-//       <p>{product.brand}</p>
-//       <p>{product.category}</p>
-//       <p>{product.id}</p>
-//       <p>{product.discountPercentage}</p>
-//     </div>
-//   );
-// }
+function Card({ product }) {
+  // let cardStyle = {
+  //   background: `url(${image})`,
+  //   backgroundsize: "cover",
+  // };
+  return (
+    <div className="card">
+      <p>{product.title}</p>
+      <p>{product.brand}</p>
+      <p>{product.category}</p>
+      <p>{product.id}</p>
+      <p>{product.discountPercentage}</p>
+    </div>
+  );
+}
 
-// export default Card;
+export default Card;
 //state lifting
 // props driling

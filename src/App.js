@@ -2098,5 +2098,25 @@ import axios from "axios";
 
 // export default DrugiDomaci;
 //=========================================================================================
-function App() {}
-export default App;
+//paginacija
+// function App() {
+//   const [search, setSearch] = useState("");
+//   const [skip, setSkip] = useState(0);
+//   const [data, setData] = useState([]);
+//   function getData() {
+//     axios
+//       .get(`https://dummyjson.com/posts?limit=30&skip=${skip}`)
+//       .then((el) => setData(el.data));
+//   }
+//   useEffect(() => {
+//     getData();
+//     console.log(data);
+//   }, []);
+//   console.log(data);
+//   return <div className="container">
+
+//   </div>
+// }
+
+// export default App;
+///
