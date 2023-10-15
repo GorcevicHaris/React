@@ -496,10 +496,15 @@
 
 p{
   color: white;
-  font-size: 13px;
+  font-size: 12px;
+  font-family: 'Courier New', monospace;
+
 }
 
-
+button:hover{
+  background-color: lightblue;
+  transition: 1s;
+}
 
 
 /* //==============================/ */

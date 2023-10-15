@@ -48,8 +48,7 @@ function BetterPag() {
           style={{ backgroundColor: skip === 120 ? "lightgray" : "" }}
           onClick={() => (skip < 120 ? setSkip(skip + 30) : "")}
         >
-          {" "}
-          {">"}
+          g {">"}
         </button>
       </div>
     </div>
