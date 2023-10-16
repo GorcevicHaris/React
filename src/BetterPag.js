@@ -16,11 +16,10 @@ function BetterPag() {
         setData(el.data.posts);
       });
   }
-
   useEffect(() => {
     getData();
   }, [skip]);
-
+  console.log(skip);
   return (
     <div className="container">
       <div className="second-small-container">
@@ -48,41 +47,11 @@ function BetterPag() {
           style={{ backgroundColor: skip === 120 ? "lightgray" : "" }}
           onClick={() => (skip < 120 ? setSkip(skip + 30) : "")}
         >
-          g {">"}
+          {">"}
         </button>
       </div>
     </div>
   );
 }
-
 export default BetterPag;
-//=================================
-// {
-/* <button */
-// }
-//         onClick={() => skip > 0 && setSkip(skip - 30)}
-//         style={{ backgroundColor: skip == 0 ? "gray" : "" }}
-//       >
-//         {"<"}
-//       </button>
-
-//       {buttonValue.map((el) => (
-//         <button
-//           style={{ backgroundColor: skip == el ? "red" : "" }}
-//           onClick={() => setSkip(el)}
-//         >
-//           {el / 30 + 1}
-//         </button>
-//       ))}
-//       <button
-//         onClick={() => {
-//           skip < 120 && setSkip(skip + 30);
-//         }}
-//         style={{ backgroundColor: skip == 120 ? "gray" : "" }}
-//       >
-//         {">"}
-//       </button>
-//     </div>
-//   );
-// }
-// export default Pag;
+//==================================================================
