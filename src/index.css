@@ -404,6 +404,7 @@
   .card {
     color: white;
     background-color:#2ecc71;
+    border: 1px solid black;
     width: 250px;
     height: 250px;
     font-size: 20px;
