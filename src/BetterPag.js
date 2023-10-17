@@ -56,7 +56,7 @@ function BetterPag() {
             onClick={() => setSkip(e * 30)}
           >
             <a style={{ textDecoration: "none", width: "100%" }} href="#h11">
-              {e + 1}
+              <div className="arrow">{e + 1}</div>
             </a>
           </button>
         ))}
