@@ -541,3 +541,13 @@ button{
   background-color: white;
   border: 0.5px solid black;
 }
+.arrow{
+  width: 100%;
+  height: 100%;
+  background-Color: purple;
+  border-Radius: 50%;
+  display: flex;
+  justify-Content: center;
+  align-Items: center;
+  text-decoration: none;
+}

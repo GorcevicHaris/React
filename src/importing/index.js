@@ -95,7 +95,7 @@ function Card({ product }) {
   // };
   return (
     <div className="card">
-      {/* <p>{product.title}</p> */}
+      <p>{product.title}</p>
       <p>{product.body}</p>
       <p>{product.brand}</p>
       <p>{product.category}</p>
