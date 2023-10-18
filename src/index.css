@@ -517,7 +517,7 @@ p{
 }
 .second-small-container{
   width: 100%;
-  height: 90%;
+  height: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -549,4 +549,9 @@ button{
   display: flex;
   justify-Content: center;
   align-Items: center;
+}
+.divSelect{
+  width: 100%;
+  height: 10%;
+  background-color: palegoldenrod;
 }

@@ -2,27 +2,47 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "./importing";
-import { Link } from "react-router-dom";
 
 function BetterPag() {
   const [skip, setSkip] = useState(0);
   const [data, setData] = useState([]);
   const [buttons, setButtons] = useState([]);
+  const [search, setSearch] = useState("");
+  const [secondData, setSecondData] = useState([]);
 
   function getData() {
+    axios.get(`https://dummyjson.com/posts?&skip=${skip}`).then((el) => {
+      setButtons([...Array(el.data.total / 30).keys()]);
+      setData(el.data.posts);
+    });
+  }
+  function getSearchData() {
     axios
-      .get(`https://dummyjson.com/posts?limit=30&skip=${skip}`)
+      .get(`https://dummyjson.com/posts/?limit=150&skip=${search}`)
       .then((el) => {
-        setButtons([...Array(el.data.total / 30).keys()]);
-        setData(el.data.posts);
+        setSecondData(el.data.posts);
       });
   }
   useEffect(() => {
     getData();
   }, [skip]);
+
+  console.log(search);
+  useEffect(() => {
+    getSearchData();
+  }, [search]);
+
+  console.log(buttons);
   console.log(skip);
   return (
     <div className="container">
+      <div className="divSelect">
+        <select onChange={(e) => setSearch(e.target.value)}>
+          {secondData.map((el) => (
+            <option>{el.id}</option>
+          ))}
+        </select>
+      </div>
       <h1 id="h11"></h1>
       <div className="second-small-container">
         {data.map((el) => (
@@ -30,7 +50,6 @@ function BetterPag() {
         ))}
       </div>
       <div className="small-container">
-        {/* <Link to="/">Povratak na početnu stranicu</Link>   */}
         <button
           style={{
             backgroundColor: skip == 0 ? "lightgray" : "",
