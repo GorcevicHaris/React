@@ -17,16 +17,13 @@ function BetterPag() {
     });
   }
   function getSearchData() {
-    axios
-      .get(`https://dummyjson.com/posts/?limit=150&skip=${search}`)
-      .then((el) => {
-        setSecondData(el.data.posts);
-      });
+    axios.get(`https://dummyjson.com/posts/?limit=150&${search}`).then((el) => {
+      setSecondData(el.data.posts);
+    });
   }
   useEffect(() => {
     getData();
   }, [skip]);
-
   console.log(search);
   useEffect(() => {
     getSearchData();
@@ -39,7 +36,7 @@ function BetterPag() {
       <div className="divSelect">
         <select onChange={(e) => setSearch(e.target.value)}>
           {secondData.map((el) => (
-            <option>{el.id}</option>
+            <option value={el.id}>{el.id}</option>
           ))}
         </select>
       </div>

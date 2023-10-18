@@ -2057,7 +2057,7 @@ import axios from "axios";
 //       });
 //   };
 //   const getSecondData = () => {
-//     fetch(`https://dummyjson.com/products/categ/search?q=${search}`)
+//     fetch(`https://dummyjson.com/products/categories/search?q=${search}`)
 //       .then((res) => res.json())
 //       .then((products) => {
 //         setSecondData(products.products);
