@@ -5,13 +5,18 @@ import Card from "./importing";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import Posts from "./pages/Posts";
+import { Link } from "react-router-dom";
 function Ap() {
   return (
-    <div className="container">
+    <div className="sizing">
+      <div className="navBar"></div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<h1>pocetak</h1>} />
+          <Route path="homepage" element={<HomePage name={"homepageeee"} />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="posts" element={<Posts />} />
         </Routes>
       </BrowserRouter>
     </div>
