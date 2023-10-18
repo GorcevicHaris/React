@@ -19,3 +19,5 @@ function Ap() {
 }
 
 export default Ap;
+//domaci navbar  da se napravi imacemo 3 stranice 1homepage 2 product 3 posts a logo je default
+// navbar stavljamo iznad browserrouterf
