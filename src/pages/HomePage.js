@@ -4,8 +4,8 @@ function HomePage({ name }) {
   const navigate = useNavigate(); //== custom hook
   return (
     <div className="main">
-      {/* <Link to={"/homepage"}>IDI NA About link </Link> */}
       {/* <button onClick={() => navigate("homepage")}>about</button> */}
+      <Link to={"/homepage"}>IDI NA About link </Link>
       <h1>{name}</h1>
     </div>
   );

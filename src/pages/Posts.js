@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Posts() {
+function Posts() {
   const navigate = useNavigate();
   return (
     <div>
@@ -9,3 +9,4 @@ export default function Posts() {
     </div>
   );
 }
+export default Posts;
