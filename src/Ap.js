@@ -9,15 +9,22 @@ import {
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import Posts from "./pages/Posts";
+import "./App.css";
 
 function Ap() {
   return (
     <BrowserRouter>
       <div className="sizing">
         <div className="navBar">
-          <Link to={"/"}>Homepage</Link>
-          <Link to={"/about"}>About</Link>
-          <Link to={"/posts"}>Posts</Link>
+          <Link className="link" to={"/"}>
+            Homepage
+          </Link>
+          <Link className="link" to={"/about"}>
+            About
+          </Link>
+          <Link className="link" to={"/posts"}>
+            Posts
+          </Link>
         </div>
         <Routes>
           <Route

@@ -568,9 +568,7 @@ button{
   height: 100vh;
   background-color: yellow;
 }
-.navBar{
+.link{
   text-decoration: none;
-}
-Route{
-  text-decoration: none;
+  color: white;
 }

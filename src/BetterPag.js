@@ -17,7 +17,7 @@ function BetterPag() {
     });
   }
   function getSearchData() {
-    axios.get(`https://dummyjson.com/posts/?limit=150&${search}`).then((el) => {
+    axios.get(`https://dummyjson.com/posts/?${search}`).then((el) => {
       setSecondData(el.data.posts);
     });
   }
@@ -27,17 +27,18 @@ function BetterPag() {
   console.log(search);
   useEffect(() => {
     getSearchData();
+  }, []);
+  useEffect(() => {
+    getSearchData();
   }, [search]);
-
+  console.log(secondData);
   console.log(buttons);
   console.log(skip);
   return (
     <div className="container">
       <div className="divSelect">
         <select onChange={(e) => setSearch(e.target.value)}>
-          {secondData.map((el) => (
-            <option value={el.id}>{el.id}</option>
-          ))}
+          {secondData && secondData.map((el) => <option>{el.id}</option>)}
         </select>
       </div>
       <h1 id="h11"></h1>
