@@ -5,7 +5,6 @@ function HomePage({ name }) {
   return (
     <div className="main">
       {/* <button onClick={() => navigate("homepage")}>about</button> */}
-      <Link to={"/homepage"}>IDI NA About link </Link>
       <h1>{name}</h1>
     </div>
   );
