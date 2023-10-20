@@ -16,7 +16,7 @@ function Ap() {
     <BrowserRouter>
       <div className="sizing">
         <div className="navBar">
-          <Link lassName="link" to={"/"}>
+          <Link className="link" to={"/homepage"}>
             Homepage
           </Link>
           <Link className="link" to={"/about"}>
@@ -31,7 +31,7 @@ function Ap() {
             path="/"
             element={<h1>pozdrav ovo je pocetna stranica</h1>}
           ></Route>
-          <Route path="/" element={<HomePage name={"homepageeee"} />} />
+          <Route path="/homepage" element={<HomePage name={"homepageeee"} />} />
           <Route path="/about" element={<AboutPage name={"about"} />} />
           <Route path="/posts" element={<Posts />} />
         </Routes>
