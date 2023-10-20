@@ -100,6 +100,9 @@ function Card({ product }) {
       <p>{product.brand}</p>
       <p>{product.category}</p>
       <p>{product.id}</p>
+      <p>{product.ime}</p>
+      <p>{product.cena}</p>
+
       {/* <p>{product.userId}</p> */}
       <p>{product.tags}</p>
       <p>{product.discountPercentage}</p>

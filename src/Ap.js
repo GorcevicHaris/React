@@ -16,7 +16,7 @@ function Ap() {
     <BrowserRouter>
       <div className="sizing">
         <div className="navBar">
-          <Link className="link" to={"/"}>
+          <Link lassName="link" to={"/"}>
             Homepage
           </Link>
           <Link className="link" to={"/about"}>

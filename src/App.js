@@ -1056,7 +1056,6 @@ import axios from "axios";
 // }
 // export default App;
 // //==================================================
-// //==================================================
 // function App() {
 //   const [products, setProducts] = useState([
 //     { ime: "Adidas", cena: 120, uKorpi: false },
@@ -1082,7 +1081,7 @@ import axios from "axios";
 //           Submit
 //         </button>
 //         {filteredArray.length > 0 ? (
-//           filteredArray.map((el) => <Card ime={el.ime} cena={el.cena} />)
+//           filteredArray.map((el) => <Card product={el} />)
 //         ) : (
 //           <h1>Nemate nista trenutno na stanju</h1>
 //         )}
@@ -1091,6 +1090,26 @@ import axios from "axios";
 //   );
 // }
 // export default App;
+// //==================================================================================
+
+function App() {
+  const [products, setProducts] = useState([
+    { name: "Adidas", price: 120, inCart: false },
+    { name: "Puma", price: 200, inCart: false },
+    { name: "Nike", price: 300, inCart: false },
+    { name: "Didadora", price: 70, inCart: false },
+    { name: "Under Armour", price: 120, inCart: false },
+  ]);
+  return (
+    <div className="container">
+      <div className="main">{products.length}</div>
+    </div>
+  );
+}
+
+export default App;
+
+// ==================================================================================
 
 // // function App() {
 // //   const [inputText, setInputText] = useState("");
