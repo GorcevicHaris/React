@@ -1011,86 +1011,86 @@ import axios from "axios";
 
 // //['bkbdkf'] = dodato iz inputa nakon toga filter vraca samo one koji su drugaciji od o isto
 // // //==============================================
-// // function App() {
-// //   const [products, setProducts] = useState([
-// //     { name: "Adidas", price: 120, inCart: false },
-// //     { name: "Puma", price: 200, inCart: false },
-// //     { name: "Nike", price: 300, inCart: false },
-// //     { name: "Didadora", price: 70, inCart: false },
-// //     { name: "Under Armour", price: 120, inCart: false },
-// //   ]);
+// function App() {
+//   const [products, setProducts] = useState([
+//     { name: "Adidas", price: 120, inCart: false },
+//     { name: "Puma", price: 200, inCart: false },
+//     { name: "Nike", price: 300, inCart: false },
+//     { name: "Didadora", price: 70, inCart: false },
+//     { name: "Under Armour", price: 120, inCart: false },
+//   ]);
 
-// //   const mapProduct = products.map((el) => el);
-// //   const inCartProducts = products.filter((product) => product.inCart == true);
+//   const mapProduct = products.map((el) => el);
+//   const inCartProducts = products.filter((product) => product.inCart == true);
 
-// //   console.log(inCartProducts.length);
+//   console.log(inCartProducts.length);
 
-// //   return (
-// //     <div className="container">
-// //       <div className="main">
-// //         {inCartProducts.length > 0 ? (
-// //           inCartProducts.map((product) => (
-// //             <Card ime={product.name} cena={product.price} />
-// //           ))
-// //         ) : (
-// //           <h1>Nemate proizvoda u korpi</h1>
-// //         )}
-// //         <button
-// //           onClick={() => {
-// //             setProducts((el) =>
-// //               el.map((e) =>
-// //                 e.name === "Puma"
-// //                   ? { ...e, inCart: !e.inCart }
-// //                   : e && e.name === "Nike"
-// //                   ? { ...e, inCart: !e.inCart }
-// //                   : e
-// //               )
-// //             );
-// //           }}
-// //         >
-// //           Dodaj u korpu
-// //         </button>
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default App;
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         {inCartProducts.length > 0 ? (
+//           inCartProducts.map((product) => (
+//             <Card ime={product.name} cena={product.price} />
+//           ))
+//         ) : (
+//           <h1>Nemate proizvoda u korpi</h1>
+//         )}
+//         <button
+//           onClick={() => {
+//             setProducts((el) =>
+//               el.map((e) =>
+//                 e.name === "Puma"
+//                   ? { ...e, inCart: !e.inCart }
+//                   : e && e.name === "Nike"
+//                   ? { ...e, inCart: !e.inCart }
+//                   : e
+//               )
+//             );
+//           }}
+//         >
+//           Dodaj u korpu
+//         </button>
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
 // //==================================================
 // //==================================================
-// // function App() {
-// //   const [products, setProducts] = useState([
-// //     { ime: "Adidas", cena: 120, uKorpi: false },
-// //     { ime: "Puma", cena: 200, uKorpi: false },
-// //     { ime: "Nike", cena: 300, uKorpi: false },
-// //     { ime: "Didadora", cena: 70, uKorpi: false },
-// //     { ime: "Under Armour", cena: 120, uKorpi: false },
-// //   ]);
-// //   const filteredArray = products.filter((el) => el.uKorpi);
-// //   console.log(filteredArray);
-// //   return (
-// //     <div className="container">
-// //       <div className="main">
-// //         <button
-// //           onClick={() => {
-// //             setProducts(
-// //               products.map((e) =>
-// //                 e.ime == "Nike" ? { ...e, uKorpi: !e.uKorpi } : e
-// //               )
-// //             );
-// //           }}
-// //         >
-// //           Submit
-// //         </button>
-// //         {filteredArray.length > 0 ? (
-// //           filteredArray.map((el) => <Card ime={el.ime} cena={el.cena} />)
-// //         ) : (
-// //           <h1>Nemate nista trenutno na stanju</h1>
-// //         )}
-// //       </div>
-// //     </div>
-// //   );
-// // }
-// // export default App;
+// function App() {
+//   const [products, setProducts] = useState([
+//     { ime: "Adidas", cena: 120, uKorpi: false },
+//     { ime: "Puma", cena: 200, uKorpi: false },
+//     { ime: "Nike", cena: 300, uKorpi: false },
+//     { ime: "Didadora", cena: 70, uKorpi: false },
+//     { ime: "Under Armour", cena: 120, uKorpi: false },
+//   ]);
+//   const filteredArray = products.filter((el) => el.uKorpi);
+//   console.log(filteredArray);
+//   return (
+//     <div className="container">
+//       <div className="main">
+//         <button
+//           onClick={() => {
+//             setProducts(
+//               products.map((e) =>
+//                 e.ime == "Nike" ? { ...e, uKorpi: !e.uKorpi } : e
+//               )
+//             );
+//           }}
+//         >
+//           Submit
+//         </button>
+//         {filteredArray.length > 0 ? (
+//           filteredArray.map((el) => <Card ime={el.ime} cena={el.cena} />)
+//         ) : (
+//           <h1>Nemate nista trenutno na stanju</h1>
+//         )}
+//       </div>
+//     </div>
+//   );
+// }
+// export default App;
 
 // // function App() {
 // //   const [inputText, setInputText] = useState("");

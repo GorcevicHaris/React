@@ -6,4 +6,4 @@ import App from "./App";
 import BetterPag from "./BetterPag";
 import Ap from "./Ap";
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<BetterPag />);
+root.render(<App />);
