@@ -562,6 +562,7 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
 .sizing{
   width: 100vw;

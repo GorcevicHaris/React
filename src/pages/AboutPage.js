@@ -11,4 +11,5 @@ function AboutPage({ name }) {
     </div>
   );
 }
+//=
 export default AboutPage;

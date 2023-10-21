@@ -12,10 +12,12 @@ import Posts from "./pages/Posts";
 import "./App.css";
 
 function Ap() {
+  // const navigate = useNavigate();
   return (
     <BrowserRouter>
       <div className="sizing">
         <div className="navBar">
+          {/* <button onClick={() => navigate("/homepage")}>homepage</button> */}
           <Link className="link" to={"/homepage"}>
             Homepage
           </Link>
@@ -31,7 +33,7 @@ function Ap() {
             path="/"
             element={<h1>pozdrav ovo je pocetna stranica</h1>}
           ></Route>
-          <Route path="/homepage" element={<HomePage name={"homepageeee"} />} />
+          <Route path="/homepage" element={<HomePage />} />
           <Route path="/about" element={<AboutPage name={"about"} />} />
           <Route path="/posts" element={<Posts />} />
         </Routes>
