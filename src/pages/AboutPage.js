@@ -13,3 +13,4 @@ function AboutPage({ name }) {
 }
 //=/;====
 export default AboutPage;
+
